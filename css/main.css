@@ -163,21 +163,21 @@ body {
   height: 25vh;
 }
 .nav__item {
-  font-size: 1.6em;
+  font-size: 1.4em;
   text-decoration: none;
   color: #c39e6d;
 }
 .nav__main-nav-item, .nav__contact-item, .nav__lang-item, .nav__social-item {
-  margin: 0.8em 3em;
+  margin: 0.5em 2em;
 }
 .nav__social {
-  margin: 5em 0;
+  margin: 2em 0;
 }
 .nav__main-nav-item:first-child {
-  margin-top: 5em;
+  margin-top: 3.5em;
 }
 .nav__social-item {
-  margin-right: 0.5em;
+  margin-right: 0.1em;
 }
 .nav--active {
   transform: translateX(0);

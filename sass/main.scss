@@ -61,7 +61,7 @@ body {
     }
 
     &__item {
-        font-size: 1.6em;
+        font-size: 1.4em;
         text-decoration: none;
         color: $main-Color;
     }
@@ -70,17 +70,17 @@ body {
     &__contact-item,
     &__lang-item,
     &__social-item {
-        margin: .8em 3em;
+        margin: .5em 2em;
     }
     &__social {
-        margin: 5em 0;
+        margin: 2em 0;
     }
     &__main-nav-item:first-child {
-        margin-top: 5em;
+        margin-top: 3.5em;
     }
 
     &__social-item {
-        margin-right: .5em;
+        margin-right: .1em;
     }
 
     &--active {
