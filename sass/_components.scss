@@ -10,6 +10,16 @@
 
 // NAVIGATION COMPONENTS
 
+@keyframes logoAnimation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 .nav {
 
     // LOGO
@@ -21,6 +31,11 @@
         width: 90px;
         filter: invert(1);
     }
+
+    &__logo-box:hover {
+        animation: logoAnimation .5s;
+    }
+
 
     // BURGER BUTTON
 
@@ -39,7 +54,7 @@
             width: 30px;
             height: 21px;
             z-index: 300;
-            
+
         }
 
         &-bars,
@@ -51,9 +66,9 @@
             width: 100%;
             background-color: $pure-white;
             height: 3px;
-            
+
             transition: background-color .5s;
-            
+
         }
 
         &-bars::before {
