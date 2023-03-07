@@ -1,0 +1,160 @@
+.wrapper {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.section-white__padding {
+    padding: 2em 2.5em;
+}
+
+// NAVIGATION COMPONENTS
+
+.nav {
+
+    // LOGO
+
+    &__logo-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90px;
+        filter: invert(1);
+    }
+
+    // BURGER BUTTON
+
+    &__logo-box,
+    &__burgerBtn {
+        background: none;
+        border: none;
+        padding: 1.2em;
+        cursor: pointer;
+    }
+
+    &__burgerBtn {
+
+        &-box {
+            position: relative;
+            width: 30px;
+            height: 21px;
+            z-index: 300;
+            
+        }
+
+        &-bars,
+        &-bars::before,
+        &-bars::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%;
+            background-color: $pure-white;
+            height: 3px;
+            
+            transition: background-color .5s;
+            
+        }
+
+        &-bars::before {
+            top: 9px;
+        }
+
+        &-bars::after {
+            top: 18px;
+        }
+    }
+
+    &__burgerBtn--active {
+        background-color: $main-Color;
+    }
+}
+
+
+// SECTION HEADER
+
+.section-header {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title,
+    &__pretitle,
+    &__text {
+        max-width: 900px;
+        text-align: center;
+
+    }
+
+    &__pretitle {
+        padding: 1.5em 0;
+        font-size: 1.6rem;
+        line-height: 2.5rem;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: $main-Color;
+        order: -1;
+    }
+
+
+    &__title {
+        font-size: 3.2rem;
+        font-weight: 400;
+    }
+
+    &__text {
+        font-size: 2rem;
+        font-weight: 300;
+        font-style: italic;
+        line-height: 2.8rem;
+    }
+}
+
+.hl_thin,
+.hl_thick {
+    margin: 2em 0;
+    background-color: $pure-black;
+}
+
+.hl_thin {
+    height: 1px;
+    width: 50%;
+    max-width: 200px;
+}
+
+.hl_thick {
+    height: 5px;
+    width: 40%;
+    max-width: 150px;
+}
+
+@media(min-width: 375px) {
+    .section-header {
+
+        &__pretitle {
+            letter-spacing: .1em;
+        }
+
+        &__title {
+            font-size: 4rem;
+        }
+    }
+}
+
+@media(min-width: 576px) {
+    .section-header {
+        &__title {
+            font-size: 4.8rem;
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    .section-header {
+        &__pretitle {
+            letter-spacing: .3em;
+        }
+    }
+}

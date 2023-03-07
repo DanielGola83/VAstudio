@@ -1,0 +1,166 @@
+@import '../sass/colors';
+@import '../sass/components';
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+}
+
+
+// NAVIGATION
+
+.nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: .5em;
+    left: .5em;
+    right: .5em;
+    z-index: 100;
+
+    &__main-nav,
+    &__others-nav {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        right: 0;
+        width: 100%;
+        transform: translateX(100%);
+        transition: .4s;
+        z-index: 200;
+        background-color: $pure-black;
+        opacity: .9;
+    }
+
+    &__main-nav {
+        justify-content: flex-start;
+        top: 0;
+        height: 100vh;
+    }
+
+    &__others-nav {
+        justify-content: flex-end;
+        bottom: 0;
+        height: 25vh;
+    }
+
+    &__item {
+        font-size: 1.6em;
+        text-decoration: none;
+        color: $main-Color;
+    }
+
+    &__main-nav-item,
+    &__contact-item,
+    &__lang-item,
+    &__social-item {
+        margin: .8em 3em;
+    }
+    &__social {
+        margin: 5em 0;
+    }
+    &__main-nav-item:first-child {
+        margin-top: 5em;
+    }
+
+    &__social-item {
+        margin-right: .5em;
+    }
+
+    &--active {
+        transform: translateX(0);
+    }
+}
+
+// HEADER 
+
+.header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 1em;
+    color: $pure-white;
+    background-image: url(../img/hero-small.webp);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 0;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+    }
+
+    .section-header {
+        &__title {
+            font-weight: 500;
+            line-height: 1.3em;
+            font-size: 3.6rem;
+        }
+    }
+
+    .hl_thin {
+        background-color: $main-Color;
+    }
+
+    @media(min-width: 375px) {
+        .section-header {
+            &__title {
+                font-size: 4.4rem;
+                font-weight: 300;
+            }
+        }
+    }
+
+    @media(min-width: 576px) {
+        .section-header {
+            &__title {
+                font-size: 5.2rem;
+
+            }
+        }
+    }
+
+    @media(min-width: 992px) {
+        .section-header {
+            &__title {
+                font-size: 5.8rem;
+            }
+        }
+    }
+
+
+    @media(min-width: 1100px) {
+        .section-header {
+            &__title {
+                font-size: 6rem;
+            }
+        }
+    }
+}
