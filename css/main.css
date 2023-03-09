@@ -9,10 +9,13 @@
 }
 
 @keyframes logoAnimation {
-  from {
-    opacity: 0;
+  0% {
+    opacity: 1;
   }
-  to {
+  10% {
+    opacity: 0.3;
+  }
+  100% {
     opacity: 1;
   }
 }
@@ -24,7 +27,7 @@
   filter: invert(1);
 }
 .nav__logo-box:hover {
-  animation: logoAnimation 0.5s;
+  animation: logoAnimation 0.4s;
 }
 .nav__logo-box, .nav__burgerBtn {
   background: none;

@@ -11,11 +11,15 @@
 // NAVIGATION COMPONENTS
 
 @keyframes logoAnimation {
-    from {
-        opacity: 0;
+    0% {
+        opacity: 1;
     }
 
-    to {
+    10% {
+        opacity: .3;
+    }
+
+    100% {
         opacity: 1;
     }
 }
@@ -33,7 +37,7 @@
     }
 
     &__logo-box:hover {
-        animation: logoAnimation .5s;
+        animation: logoAnimation .4s;
     }
 
 
