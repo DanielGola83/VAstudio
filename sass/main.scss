@@ -29,6 +29,7 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+&__main-nav, &__social {}
 
     &__main-nav {
         position: fixed;
@@ -47,7 +48,7 @@ body {
     }
 
     &--active {
-        transform: translateX(30%);
+        transform: translateX(35%);
     }
 
     &__main-nav-item {
@@ -69,7 +70,7 @@ body {
     &__social {
         position: absolute;
         display: flex;
-        bottom: 2em;
+        bottom: 4em;
 
         li {
             list-style-type: none;
@@ -93,226 +94,125 @@ body {
     }
 }
 
+@media(min-width: 992px) {
+    .nav {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        left: 0;
+        right: 0;
+        padding: 1em 2em;
 
+        &__main-nav {
+            position: relative;
 
-// .nav {
-//     position: absolute;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     top: .5em;
-//     left: .5em;
-//     right: .5em;
-//     z-index: 100;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            text-align: right;
 
-//     &__main-nav,
-//     &__others-nav {
-//         position: fixed;
-//         display: flex;
-//         flex-direction: column;
-//         align-items: flex-start;
-//         right: 0;
-//         width: 100%;
-//         transform: translateX(100%);
-//         transition: .4s;
-//         z-index: 200;
-//         background-color: $pure-black;
-//         opacity: .9;
-//     }
+            width: 100%;
+            max-width: 700px;
+            height: auto;
 
-//     &__main-nav {
-//         justify-content: flex-start;
-//         top: 0;
-//         height: 100vh;
-//     }
+            transform: translateX(0);
 
-//     &__others-nav {
-//         justify-content: flex-end;
-//         bottom: 0;
-//         height: 25vh;
-//     }
+            background: none;
+        }
 
-//     &__item {
-//         font-size: 1.6rem;
-//         text-decoration: none;
-//         color: $main-Color;
-//     }
+        // LOGO & SOCIAL CONTAINER
 
-//     &__main-nav-item,
-//     &__contact-item,
-//     &__lang-item,
-//     &__social-item {
-//         margin: .5em 2em;
-//     }
+        &__logoBtn,
+        &__social {
+            position: relative;
+            width: 100%;
+            max-width: 200px;
+            // background-color: rgba(255, 99, 71, 0.418);
+            // display: none;
+        }
 
-//     &__social {
-//         margin: 2em 0;
-//     }
+        &__social {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
 
-//     &__main-nav-item:first-child {
-//         margin-top: 3.5em;
-//     }
+            li {
+                padding: .6em;
+            }
+        }
 
-//     &__social-item {
-//         margin-right: .1em;
-//     }
+        &__logo-box {
+            padding-left: 0;
+        }
 
+        // RESET
 
-// }
+        &__item {
+            padding: 0;
+            font-size: 1.4rem;
+        }
 
+        &__main-nav-item {
+            margin: 0;
+        }
 
-// @media(min-width: 992px) {
-//     .nav {
-//         display: block;
-//         justify-content: center;
+        &__main-nav-item:first-child {
+            margin-top: 0;
+        }
 
-//         top: 0;
-//         left: 0;
-//         right: 0;
+        // SOCIAL ICONS
 
-//         &__burgerBtn {
-//             display: none;
-//         }
+        &__social {
+            bottom: 0;
 
-//         &__desktop {
-//             display: flex;
-//             justify-content: center;
-//             align-items: center;
-//             padding: 2em;
-//         }
+            li {
+                margin-right: 0;
+            }
+        }
 
-//         &__main-nav,
-//         &__others-nav {
-//             position: relative;
-//             align-items: center;
-//             display: block;
-//             transform: translateX(0);
-//             background-color: transparent;
-//             height: auto;
-//         }
+        // HOVER ANIMATIONS
 
-//         &__main-nav {
-//             text-align: center;
-//         }
+        &__item {
+            position: relative;
+            color: $light-white;
+            transition: color .3s;
+        }
 
-//         &__others-nav {
-//             display: flex;
-//             flex-direction: row;
-//             justify-content: flex-end;
-//         }
+        &__item:hover {
+            color: $pure-white;
+        }
 
-//         &__others-nav,
-//         &__logoBtn {
-//             width: 370px;
-//         }
+        &__item::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $pure-white;
+            transform: scaleX(0);
+            transition: transform .3s;
+        }
 
-//         &__logo-box {
-//             width: 100px;
-//             padding-left: 0;
-//         }
+        &__item:hover::before {
+            transform: scaleX(1);
+        }
 
-//         &__item {
-//             font-size: .95em;
-//             color: $pure-white;
-//         }
+        // LOGO
 
-//         &__main-nav-item,
-//         &__contact-item,
-//         &__lang-item,
-//         &__social-item {
-//             margin: 0 .9em;
-//         }
+        &__logo-box {
+            width: 110px;
+        }
 
-//         &__social {
-//             margin: 0;
-//         }
-
-//         &__social-item {
-//             margin: 0;
-//             margin-left: .5em;
-//         }
-
-
-//         // HOVER ANIMATIONS
-
-//         &__main-nav-item,
-//         &__contact-item,
-//         &__lang-item,
-//         &__social-item {
-//             position: relative;
-//             color: $light-white;
-//             transition: color .3s;
-//         }
-
-//         &__main-nav-item:hover,
-//         &__contact-item:hover,
-//         &__lang-item:hover,
-//         &__social-item:hover {
-//             color: $pure-white;
-//         }
-
-//         &__main-nav-item::before,
-//         &__contact-item::before,
-//         &__lang-item::before {
-//             content: '';
-//             position: absolute;
-//             bottom: -10px;
-//             left: 0;
-//             width: 100%;
-//             height: 2px;
-//             background-color: $pure-white;
-//             transform: scaleX(0);
-//             transition: transform .3s;
-//         }
-
-//         &__main-nav-item:hover::before,
-//         &__contact-item:hover::before,
-//         &__lang-item:hover::before {
-//             transform: scaleX(100%);
-//         }
-//     }
-// }
-
-// @media(min-width: 1200px) {
-//     .nav {
-
-//         &__main-nav-item,
-//         &__contact-item {
-//             margin: 0 1.5em;
-//         }
-//     }
-// }
-
-// @media(min-width: 1400px) {
-//     .nav {
-
-//         &__main-nav-item,
-//         &__contact-item {
-//             margin: 0 2em;
-//         }
-
-//         &__others-nav,
-//         &__logoBtn {
-//             width: 450px;
-//         }
-
-//         &__social {
-//             margin-left: 1.5em;
-//         }
-//     }
-// }
-
-// @media(min-width: 1600px) {
-//     .nav {
-//         &__item {
-//             font-size: 1.6rem;
-//         }
-
-//         &__social-item {
-//             margin-left: .5em;
-//         }
-//     }
-// }
+        &__burgerBtn,
+        &__shadow {
+            display: none;
+        }
+    }
+}
 
 // HEADER 
 

@@ -13,10 +13,10 @@ const handleNav = () => {
     allNavItems.forEach(item => {
         item.addEventListener('click', () => {
             navMain.classList.remove('nav--active');
+            navShadow.classList.remove('nav__shadow--active');
         })
     })
 }
-
 
 
 navBtn.addEventListener('click', handleNav)

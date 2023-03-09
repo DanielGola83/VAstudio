@@ -31,9 +31,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 90px;
+        width: 100px;
         filter: invert(1);
-
     }
 
     &__logo-box:hover {
@@ -52,7 +51,7 @@
     &__burgerBtn {
         background: none;
         border: none;
-        padding: 1.2em;
+        padding: 1.5em;
         cursor: pointer;
         z-index: 300;
     }
@@ -73,9 +72,6 @@
             width: 100%;
             background-color: $main-Color;
             height: 3px;
-
-            transition: background-color .5s;
-
         }
 
         &-bars::before {
