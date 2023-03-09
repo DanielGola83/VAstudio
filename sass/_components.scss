@@ -23,6 +23,9 @@
 .nav {
 
     // LOGO
+    &__logoBtn {
+        z-index: 300;
+    }
 
     &__logo-box {
         display: flex;
@@ -30,6 +33,7 @@
         align-items: center;
         width: 90px;
         filter: invert(1);
+
     }
 
     &__logo-box:hover {
