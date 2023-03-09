@@ -26,24 +26,28 @@
 .nav__logo-box:hover {
   animation: logoAnimation 0.5s;
 }
+.nav__burgerBtn {
+  position: fixed;
+  right: 0;
+}
 .nav__logo-box, .nav__burgerBtn {
   background: none;
   border: none;
   padding: 1.2em;
   cursor: pointer;
+  z-index: 300;
 }
 .nav__burgerBtn-box {
   position: relative;
   width: 30px;
   height: 21px;
-  z-index: 300;
 }
 .nav__burgerBtn-bars, .nav__burgerBtn-bars::before, .nav__burgerBtn-bars::after {
   content: "";
   position: absolute;
   left: 0;
   width: 100%;
-  background-color: #fff;
+  background-color: #c39e6d;
   height: 3px;
   transition: background-color 0.5s;
 }
@@ -52,9 +56,6 @@
 }
 .nav__burgerBtn-bars::after {
   top: 18px;
-}
-.nav__burgerBtn--active {
-  background-color: #c39e6d;
 }
 
 .section-header__container {
@@ -145,156 +146,48 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  top: 0.5em;
-  left: 0.5em;
-  right: 0.5em;
   z-index: 100;
 }
-.nav__main-nav, .nav__others-nav {
+.nav__main-nav {
   position: fixed;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: flex-start;
+  top: 0;
   right: 0;
   width: 100%;
-  transform: translateX(100%);
-  transition: 0.4s;
-  z-index: 200;
-  background-color: #000;
-  opacity: 0.9;
-}
-.nav__main-nav {
-  justify-content: flex-start;
-  top: 0;
   height: 100vh;
-}
-.nav__others-nav {
-  justify-content: flex-end;
-  bottom: 0;
-  height: 25vh;
-}
-.nav__item {
-  font-size: 1.6rem;
-  text-decoration: none;
-  color: #c39e6d;
-}
-.nav__main-nav-item, .nav__contact-item, .nav__lang-item, .nav__social-item {
-  margin: 0.5em 2em;
-}
-.nav__social {
-  margin: 2em 0;
-}
-.nav__main-nav-item:first-child {
-  margin-top: 3.5em;
-}
-.nav__social-item {
-  margin-right: 0.1em;
+  transition: transform 0.4s;
+  transform: translateX(100%);
+  background-color: rgba(0, 0, 0, 0.95);
 }
 .nav--active {
-  transform: translateX(0);
+  transform: translateX(30%);
+}
+.nav__main-nav-item {
+  margin: 0.5em 1em;
+  list-style-type: none;
+}
+.nav__main-nav-item:first-child {
+  margin-top: 6em;
+}
+.nav__item {
+  padding: 0.5em;
+  font-size: 1.6rem;
+  color: #c39e6d;
+  text-decoration: none;
+}
+.nav__social {
+  position: absolute;
+  display: flex;
+  bottom: 2em;
+}
+.nav__social li {
+  list-style-type: none;
+  margin-right: 2em;
 }
 
-@media (min-width: 992px) {
-  .nav {
-    display: block;
-    justify-content: center;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-  .nav__burgerBtn {
-    display: none;
-  }
-  .nav__desktop {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2em;
-  }
-  .nav__main-nav, .nav__others-nav {
-    position: relative;
-    align-items: center;
-    display: block;
-    transform: translateX(0);
-    background-color: transparent;
-    height: auto;
-  }
-  .nav__main-nav {
-    text-align: center;
-  }
-  .nav__others-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-  .nav__others-nav, .nav__logoBtn {
-    width: 370px;
-  }
-  .nav__logo-box {
-    width: 100px;
-    padding-left: 0;
-  }
-  .nav__item {
-    font-size: 0.95em;
-    color: #fff;
-  }
-  .nav__main-nav-item, .nav__contact-item, .nav__lang-item, .nav__social-item {
-    margin: 0 0.9em;
-  }
-  .nav__social {
-    margin: 0;
-  }
-  .nav__social-item {
-    margin: 0;
-    margin-left: 0.5em;
-  }
-  .nav__main-nav-item, .nav__contact-item, .nav__lang-item, .nav__social-item {
-    position: relative;
-    color: #ccc;
-    transition: color 0.3s;
-  }
-  .nav__main-nav-item:hover, .nav__contact-item:hover, .nav__lang-item:hover, .nav__social-item:hover {
-    color: #fff;
-  }
-  .nav__main-nav-item::before, .nav__contact-item::before, .nav__lang-item::before {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #fff;
-    transform: scaleX(0);
-    transition: transform 0.3s;
-  }
-  .nav__main-nav-item:hover::before, .nav__contact-item:hover::before, .nav__lang-item:hover::before {
-    transform: scaleX(100%);
-  }
-}
-@media (min-width: 1200px) {
-  .nav__main-nav-item, .nav__contact-item {
-    margin: 0 1.5em;
-  }
-}
-@media (min-width: 1400px) {
-  .nav__main-nav-item, .nav__contact-item {
-    margin: 0 2em;
-  }
-  .nav__others-nav, .nav__logoBtn {
-    width: 450px;
-  }
-  .nav__social {
-    margin-left: 1.5em;
-  }
-}
-@media (min-width: 1600px) {
-  .nav__item {
-    font-size: 1.6rem;
-  }
-  .nav__social-item {
-    margin-left: 0.5em;
-  }
-}
 .header {
   position: relative;
   display: flex;

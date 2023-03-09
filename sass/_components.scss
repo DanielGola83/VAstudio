@@ -39,22 +39,25 @@
 
     // BURGER BUTTON
 
+    &__burgerBtn {
+        position: fixed;
+        right: 0;
+    }
+
     &__logo-box,
     &__burgerBtn {
         background: none;
         border: none;
         padding: 1.2em;
         cursor: pointer;
+        z-index: 300;
     }
 
     &__burgerBtn {
-
         &-box {
             position: relative;
             width: 30px;
             height: 21px;
-            z-index: 300;
-
         }
 
         &-bars,
@@ -64,7 +67,7 @@
             position: absolute;
             left: 0;
             width: 100%;
-            background-color: $pure-white;
+            background-color: $main-Color;
             height: 3px;
 
             transition: background-color .5s;
@@ -79,14 +82,10 @@
             top: 18px;
         }
     }
-
-    &__burgerBtn--active {
-        background-color: $main-Color;
-    }
 }
 
 
-// SECTION HEADER
+// // SECTION HEADER
 
 .section-header {
     &__container {
