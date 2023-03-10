@@ -9,15 +9,16 @@
 }
 
 .menu-btn {
-  position: relative;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 80px;
   height: 80px;
   cursor: pointer;
-  border: 3px solid #fff;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.4s ease;
+  right: 0;
+  z-index: 100;
 }
 
 .menu-btn__burger {
@@ -25,7 +26,7 @@
   height: 6px;
   background: #fff;
   border-radius: 5px;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.4s ease;
 }
 
 .menu-btn__burger::before,
@@ -36,7 +37,7 @@
   height: 6px;
   background: #fff;
   border-radius: 5px;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.4s ease;
 }
 
 .menu-btn__burger::before {
@@ -230,9 +231,6 @@ body {
   list-style-type: none;
   margin: 0.5em 1em;
 }
-.nav--active {
-  transform: translateX(35%);
-}
 .nav__main-nav-item, .nav__nav-social {
   margin: 0.5em 1em;
   list-style-type: none;
@@ -258,6 +256,9 @@ body {
 }
 .nav__shadow--active {
   opacity: 0.8;
+}
+.nav--active {
+  transform: translateX(35%);
 }
 
 @media (min-width: 992px) {

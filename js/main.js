@@ -1,6 +1,6 @@
 const navMain = document.querySelector('.nav__main-nav');
 const navSocial = document.querySelector('.nav__social');
-const navBtn = document.querySelector('.nav__burgerBtn');
+const navBtn = document.querySelector('.menu-btn');
 const navShadow = document.querySelector('.nav__shadow');
 
 const allNavItems = document.querySelectorAll('.nav__item');
@@ -10,12 +10,14 @@ const allNavItems = document.querySelectorAll('.nav__item');
 const handleNav = () => {
     navMain.classList.toggle('nav--active');
     navSocial.classList.toggle('nav--active');
+    navBtn.classList.toggle('open');
     navShadow.classList.toggle('nav__shadow--active');
 
     allNavItems.forEach(item => {
         item.addEventListener('click', () => {
             navMain.classList.remove('nav--active');
             navSocial.classList.remove('nav--active');
+            navBtn.classList.remove('open');
             navShadow.classList.remove('nav__shadow--active');
         })
     })
@@ -28,15 +30,15 @@ navBtn.addEventListener('click', handleNav)
 
 
 
-const menuBtn = document.querySelector('.menu-btn');
-let menuOpen = false;
+// const menuBtn = document.querySelector('.menu-btn');
+// let menuOpen = false;
 
-menuBtn.addEventListener('click', () => {
-    if(!menuOpen) {
-        menuBtn.classList.add('open');
-        menuOpen = true;
-    } else {
-        menuBtn.classList.remove('open');
-        menuOpen = false;
-    }
-})
+// menuBtn.addEventListener('click', () => {
+//     if(!menuOpen) {
+//         menuBtn.classList.add('open');
+//         menuOpen = true;
+//     } else {
+//         menuBtn.classList.remove('open');
+//         menuOpen = false;
+//     }
+// })

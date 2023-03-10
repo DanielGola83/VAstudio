@@ -63,10 +63,6 @@ body {
         }
     }
 
-    &--active {
-        transform: translateX(35%);
-    }
-
     &__main-nav-item,
     &__nav-social {
         margin: .5em 1em;
@@ -97,6 +93,10 @@ body {
 
     &__shadow--active {
         opacity: .8;
+    }
+
+    &--active {
+        transform: translateX(35%);
     }
 }
 
