@@ -20,20 +20,20 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100px;
+        background: none;
+        border: none;
+        cursor: pointer;
         filter: invert(1);
+        z-index: 300;
     }
 
     &__logo-box:hover {
         animation: logoAnimation .5s;
     }
 
-    &__logo-box {
-        background: none;
-        border: none;
-        padding: 1.5em;
-        cursor: pointer;
-        z-index: 300;
+    &__logo-img {
+        margin: 1.5em;
+        width: 65px;
     }
 }
 
@@ -88,16 +88,16 @@
 
     // ANIMATION HAMBURGER BUTTON
 
-    .open &__burgerBtn-bars {
+    .open--active &__burgerBtn-bars {
         transform: translateX(-30px);
         background: transparent;
     }
 
-    .open &__burgerBtn-bars::before {
+    .open--active &__burgerBtn-bars::before {
         transform: rotate(45deg) translate(20px, -20px);
     }
 
-    .open &__burgerBtn-bars::after {
+    .open--active &__burgerBtn-bars::after {
         transform: rotate(-45deg) translate(20px, 20px);
     }
 }

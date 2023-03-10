@@ -10,35 +10,17 @@ const allNavItems = document.querySelectorAll('.nav__item');
 const handleNav = () => {
     navMain.classList.toggle('nav--active');
     navSocial.classList.toggle('nav--active');
-    navBtn.classList.toggle('open');
+    navBtn.classList.toggle('open--active');
     navShadow.classList.toggle('nav__shadow--active');
 
     allNavItems.forEach(item => {
         item.addEventListener('click', () => {
             navMain.classList.remove('nav--active');
             navSocial.classList.remove('nav--active');
-            navBtn.classList.remove('open');
+            navBtn.classList.remove('open--active');
             navShadow.classList.remove('nav__shadow--active');
         })
     })
 }
 
-
-navBtn.addEventListener('click', handleNav)
-
-
-
-
-
-// const menuBtn = document.querySelector('.menu-btn');
-// let menuOpen = false;
-
-// menuBtn.addEventListener('click', () => {
-//     if(!menuOpen) {
-//         menuBtn.classList.add('open');
-//         menuOpen = true;
-//     } else {
-//         menuBtn.classList.remove('open');
-//         menuOpen = false;
-//     }
-// })
+navBtn.addEventListener('click', handleNav);

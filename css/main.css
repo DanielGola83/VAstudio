@@ -15,18 +15,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  background: none;
+  border: none;
+  cursor: pointer;
   filter: invert(1);
+  z-index: 300;
 }
 .nav__logo-box:hover {
   animation: logoAnimation 0.5s;
 }
-.nav__logo-box {
-  background: none;
-  border: none;
-  padding: 1.5em;
-  cursor: pointer;
-  z-index: 300;
+.nav__logo-img {
+  margin: 1.5em;
+  width: 65px;
 }
 
 @keyframes logoAnimation {
@@ -64,14 +64,14 @@
 .nav__burgerBtn-bars::after {
   transform: translateY(10px);
 }
-.open .nav__burgerBtn-bars {
+.open--active .nav__burgerBtn-bars {
   transform: translateX(-30px);
   background: transparent;
 }
-.open .nav__burgerBtn-bars::before {
+.open--active .nav__burgerBtn-bars::before {
   transform: rotate(45deg) translate(20px, -20px);
 }
-.open .nav__burgerBtn-bars::after {
+.open--active .nav__burgerBtn-bars::after {
   transform: rotate(-45deg) translate(20px, 20px);
 }
 
@@ -196,11 +196,15 @@ body {
 }
 .nav__social li {
   list-style-type: none;
+  transition: transform 0.3s;
+}
+.nav__social li:hover {
+  transform: translateY(-10px);
 }
 .nav__main-nav-item {
   padding: 0.75em 0;
   list-style-type: none;
-  transition: 0.3s;
+  transition: transform 0.3s;
 }
 .nav__main-nav-item:hover {
   transform: translateX(10px);
@@ -226,17 +230,6 @@ body {
 .nav__shadow--active {
   opacity: 0.5;
 }
-@keyframes navItemAnimation {
-  from {
-    transform: translateX(200%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-.nav .nav-items-animation {
-  animation: navItemAnimation 1s both;
-}
 
 @media (min-width: 768px) {
   .nav__main-nav, .nav__social {
@@ -252,6 +245,21 @@ body {
   .nav__main-nav-item:first-child {
     margin-top: 4em;
   }
+  .nav__logo-img {
+    margin: 3em;
+    width: 90px;
+  }
+  .nav__burgerBtn {
+    margin: 3em;
+    width: 50px;
+    height: 50px;
+  }
+  .nav__burgerBtn-bars::before {
+    transform: translateY(-15px);
+  }
+  .nav__burgerBtn-bars::after {
+    transform: translateY(15px);
+  }
 }
 @media (min-width: 992px) {
   .nav {
@@ -262,7 +270,7 @@ body {
     align-items: center;
     left: 0;
     right: 0;
-    padding: 1em 2em;
+    padding: 0 3em;
   }
   .nav__main-nav {
     position: relative;
@@ -270,7 +278,6 @@ body {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    text-align: right;
     width: 100%;
     max-width: 700px;
     height: auto;
@@ -279,7 +286,6 @@ body {
   }
   .nav__logoBtn, .nav__social {
     position: relative;
-    width: 100%;
     max-width: 200px;
     transform: translateX(0);
   }
@@ -287,19 +293,60 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
+  }
+  .nav__social a {
+    padding: 1em;
+    transition: color 0.2s;
+  }
+  .nav__social a:hover {
+    color: #c39e6d;
   }
   .nav__social li {
-    padding: 0.6em;
+    transition: transform 0.2s;
   }
-  .nav__logo-box {
-    padding-left: 0;
+  .nav__social li:hover {
+    transform: translateY(-5px);
+  }
+  .nav__logo-img {
+    margin-left: 0;
   }
   .nav__item {
+    position: relative;
+    color: #ccc;
+    transition: color 0.2s;
+  }
+  .nav__item:hover {
+    color: #fff;
+  }
+  .nav__main-nav-item::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #c39e6d;
+    transform: scaleX(0);
+    transition: transform 0.2s;
+  }
+  .nav__main-nav-item:hover::before {
+    transform: scaleX(1);
+  }
+  .nav__main-nav, .nav__social {
     padding: 0;
-    font-size: 1.4rem;
+  }
+  .nav__item {
+    padding: 2em 0;
+    font-size: 1.5rem;
   }
   .nav__main-nav-item {
     margin: 0;
+    padding: 0;
+  }
+  .nav__main-nav-item:hover {
+    transform: translateX(0);
   }
   .nav__main-nav-item:first-child {
     margin-top: 0;
@@ -309,31 +356,6 @@ body {
   }
   .nav__social li {
     margin-right: 0;
-  }
-  .nav__item {
-    position: relative;
-    color: #ccc;
-    transition: color 0.3s;
-  }
-  .nav__item:hover {
-    color: #fff;
-  }
-  .nav__item::before {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #fff;
-    transform: scaleX(0);
-    transition: transform 0.3s;
-  }
-  .nav__item:hover::before {
-    transform: scaleX(1);
-  }
-  .nav__logo-box {
-    width: 110px;
   }
   .nav__burgerBtn, .nav__shadow {
     display: none;

@@ -65,14 +65,20 @@ body {
 
         li {
             list-style-type: none;
+            transition: transform .3s;
+        }
+
+        li:hover {
+            transform: translateY(-10px);
         }
     }
 
     &__main-nav-item {
         padding: .75em 0;
         list-style-type: none;
-        transition: .3s;
+        transition: transform .3s;
     }
+
     &__main-nav-item:hover {
         transform: translateX(10px);
     }
@@ -101,20 +107,6 @@ body {
     &__shadow--active {
         opacity: .5;
     }
-
-    @keyframes navItemAnimation {
-        from {
-            transform: translateX(200%);
-        }
-    
-        to {
-            transform: translateX(0);
-        }
-    }
-    
-    .nav-items-animation {
-        animation: navItemAnimation 1s both;
-    }
 }
 
 // NAVIGATION MEDIA
@@ -122,23 +114,42 @@ body {
 @media(min-width: 768px) {
 
     .nav {
-    
+
         &__main-nav,
         &__social {
             width: 45%;
             padding: 3em;
         }
-    
+
         &__main-nav-item {
             padding: 1em 0;
         }
-    
+
         &__item {
             font-size: 2.5rem;
         }
-    
+
         &__main-nav-item:first-child {
             margin-top: 4em;
+        }
+
+        &__logo-img {
+            margin: 3em;
+            width: 90px;
+        }
+
+        &__burgerBtn {
+            margin: 3em;
+            width: 50px;
+            height: 50px;
+        }
+
+        &__burgerBtn-bars::before {
+            transform: translateY(-15px);
+        }
+
+        &__burgerBtn-bars::after {
+            transform: translateY(15px);
         }
     }
 }
@@ -152,23 +163,18 @@ body {
         align-items: center;
         left: 0;
         right: 0;
-        padding: 1em 2em;
+        padding: 0 3em;
 
         &__main-nav {
             position: relative;
-
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
-            text-align: right;
-
             width: 100%;
             max-width: 700px;
             height: auto;
-
             transform: translateX(0);
-
             background: none;
         }
 
@@ -177,7 +183,6 @@ body {
         &__logoBtn,
         &__social {
             position: relative;
-            width: 100%;
             max-width: 200px;
             transform: translateX(0);
         }
@@ -186,32 +191,83 @@ body {
             display: flex;
             flex-direction: row;
             justify-content: flex-end;
+            align-items: center;
+
+            a {
+                padding: 1em;
+                transition: color .2s;
+            }
+
+            a:hover {
+                color: $main-Color;
+            }
 
             li {
-                padding: .6em;
+                transition: transform .2s;
+            }
+
+            li:hover {
+                transform: translateY(-5px);
             }
         }
 
-        &__logo-box {
-            padding-left: 0;
+        &__logo-img {
+            margin-left: 0;
+        }
+
+        // HOVER ANIMATIONS
+
+        &__item {
+            position: relative;
+            color: $light-white;
+            transition: color .2s;
+        }
+
+        &__item:hover {
+            color: $pure-white;
+        }
+
+        &__main-nav-item::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $main-Color;
+            transform: scaleX(0);
+            transition: transform .2s;
+        }
+
+        &__main-nav-item:hover::before {
+            transform: scaleX(1);
         }
 
         // RESET
 
-        &__item {
+        &__main-nav,
+        &__social {
             padding: 0;
-            font-size: 1.4rem;
+        }
+
+        &__item {
+            padding: 2em 0;
+            font-size: 1.5rem;
         }
 
         &__main-nav-item {
             margin: 0;
+            padding: 0;
+        }
+
+        &__main-nav-item:hover {
+            transform: translateX(0);
         }
 
         &__main-nav-item:first-child {
             margin-top: 0;
         }
-
-        // SOCIAL ICONS
 
         &__social {
             bottom: 0;
@@ -221,39 +277,7 @@ body {
             }
         }
 
-        // HOVER ANIMATIONS
-
-        &__item {
-            position: relative;
-            color: $light-white;
-            transition: color .3s;
-        }
-
-        &__item:hover {
-            color: $pure-white;
-        }
-
-        &__item::before {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: $pure-white;
-            transform: scaleX(0);
-            transition: transform .3s;
-        }
-
-        &__item:hover::before {
-            transform: scaleX(1);
-        }
-
-        // LOGO
-
-        &__logo-box {
-            width: 110px;
-        }
+        // BURGER BUTTON & SHADOW
 
         &__burgerBtn,
         &__shadow {
