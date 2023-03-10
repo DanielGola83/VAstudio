@@ -8,64 +8,56 @@
   padding: 2em 2.5em;
 }
 
-input[type=checkbox] {
-  visibility: hidden;
-  display: none;
-}
-
-.bar {
+.menu-btn {
   position: relative;
-  cursor: pointer;
   display: flex;
   justify-content: center;
-}
-
-.bar .middle {
-  height: 6px;
+  align-items: center;
   width: 80px;
-  background-color: #fff;
-  border-radius: 50px;
-  position: absolute;
-  transition: 0.3s ease;
+  height: 80px;
+  cursor: pointer;
+  border: 3px solid #fff;
+  transition: all 0.5s ease-in-out;
 }
 
-.bar .top {
-  bottom: 14px;
+.menu-btn__burger {
+  width: 50px;
   height: 6px;
-  width: 80px;
-  background-color: #fff;
-  border-radius: 50px;
-  position: absolute;
-  transition: 0.3s ease;
+  background: #fff;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
 }
 
-.bar .bottom {
-  top: 20px;
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: "";
+  position: absolute;
+  width: 50px;
   height: 6px;
-  width: 80px;
-  background-color: #fff;
-  border-radius: 50px;
-  position: absolute;
-  transition: 0.3s ease;
+  background: #fff;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
 }
 
-input[type=checkbox]:checked ~ .bar .top {
-  transform: rotate(-45deg);
-  width: 70px;
-  transform-origin: right;
-  top: -25px;
+.menu-btn__burger::before {
+  transform: translateY(-16px);
 }
 
-input[type=checkbox]:checked ~ .bar .bottom {
-  transform: rotate(45deg);
-  width: 70px;
-  transform-origin: right;
-  top: 25px;
+.menu-btn__burger::after {
+  transform: translateY(16px);
 }
 
-input[type=checkbox]:checked ~ .bar .middle {
-  transform: translateX(20px);
-  opacity: 0;
+.open .menu-btn__burger {
+  transform: translateX(-50px);
+  background: transparent;
+}
+
+.open .menu-btn__burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.open .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
 }
 
 @keyframes logoAnimation {
