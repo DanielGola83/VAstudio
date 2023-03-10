@@ -1,6 +1,6 @@
 const navMain = document.querySelector('.nav__main-nav');
 const navSocial = document.querySelector('.nav__social');
-const navBtn = document.querySelector('.menu-btn');
+const navBtn = document.querySelector('.nav__burgerBtn');
 const navShadow = document.querySelector('.nav__shadow');
 
 const allNavItems = document.querySelectorAll('.nav__item');
