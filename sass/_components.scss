@@ -8,84 +8,97 @@
     padding: 2em 2.5em;
 }
 
-// NAVIGATION COMPONENTS
-
-@keyframes logoAnimation {
-    0% {
-        opacity: 1;
-    }
-
-    10% {
-        opacity: .3;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
+// LOGO
 
 .nav {
 
-    // LOGO
+    &__logoBtn {
+        z-index: 300;
+    }
 
     &__logo-box {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 90px;
+        background: none;
+        border: none;
+        cursor: pointer;
         filter: invert(1);
+        z-index: 300;
     }
 
     &__logo-box:hover {
-        animation: logoAnimation .4s;
+        animation: logoAnimation .5s;
     }
 
+    &__logo-img {
+        margin: 1.5em;
+        width: 65px;
+    }
+}
 
-    // BURGER BUTTON
+// LOGO ANIMATION HOVER
 
-    &__logo-box,
+@keyframes logoAnimation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// BURGER BUTTON
+
+.nav {
+
     &__burgerBtn {
-        background: none;
-        border: none;
-        padding: 1.2em;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        margin: 1.5em;
+        width: 35px;
+        height: 35px;
         cursor: pointer;
+        transition: transform .4s ease;
+        z-index: 100;
     }
 
-    &__burgerBtn {
-
-        &-box {
-            position: relative;
-            width: 30px;
-            height: 21px;
-            z-index: 300;
-
-        }
-
-        &-bars,
-        &-bars::before,
-        &-bars::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            width: 100%;
-            background-color: $pure-white;
-            height: 3px;
-
-            transition: background-color .5s;
-
-        }
-
-        &-bars::before {
-            top: 9px;
-        }
-
-        &-bars::after {
-            top: 18px;
-        }
+    &__burgerBtn-bars,
+    &__burgerBtn-bars::before,
+    &__burgerBtn-bars::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: $main-Color;
+        transition: all .4s ease;
     }
 
-    &__burgerBtn--active {
-        background-color: $main-Color;
+    &__burgerBtn-bars::before {
+        transform: translateY(-10px);
+    }
+
+    &__burgerBtn-bars::after {
+        transform: translateY(10px);
+    }
+
+    // ANIMATION HAMBURGER BUTTON
+
+    .open--active &__burgerBtn-bars {
+        transform: translateX(-30px);
+        background: transparent;
+    }
+
+    .open--active &__burgerBtn-bars::before {
+        transform: rotate(45deg) translate(20px, -20px);
+    }
+
+    .open--active &__burgerBtn-bars::after {
+        transform: rotate(-45deg) translate(20px, 20px);
     }
 }
 
