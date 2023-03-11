@@ -193,11 +193,8 @@
 
 // GALLERY
 
-.galleryOne {
+.gallery {
     &__container {
-        display: flex;
-        flex-direction: column;
-
         img {
             width: 100%;
         }
@@ -212,7 +209,7 @@
         &__container {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: center;
             flex-wrap: wrap;
 
             a {
@@ -232,22 +229,23 @@
             }
         }
     }
+
+    .w100,
+    .w33 {
+        position: relative;
+        height: 45vw;
+        max-height: 600px;
+    }
+
+    .w100 {
+        width: 100%;
+    }
+
+    .w33 {
+        width: calc((100% / 3) - .3em);
+    }
 }
 
-.w100,
-.w33 {
-    position: relative;
-    height: 45vw;
-    max-height: 600px;
-}
-
-.w100 {
-    width: 100%;
-}
-
-.w33 {
-    width: calc((100% / 3) - .3em);
-}
 
 // .test {
 //     z-index: 1000;
