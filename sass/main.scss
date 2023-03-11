@@ -52,7 +52,7 @@ body {
         align-items: flex-start;
         top: 0;
         height: 100vh;
-        background-color: rgba(0, 0, 0, .95);
+        background-color: $complementary-Color;
         z-index: 90;
     }
 
@@ -85,6 +85,7 @@ body {
 
     &__item {
         font-size: 1.8rem;
+        font-weight: 300;
         color: $main-Color;
         text-decoration: none;
     }
@@ -105,7 +106,7 @@ body {
     }
 
     &__shadow--active {
-        opacity: .7;
+        opacity: .9;
     }
 }
 
@@ -127,6 +128,7 @@ body {
 
         &__item {
             font-size: 2.5rem;
+            font-weight: 400;
         }
 
         &__main-nav-item:first-child {
@@ -362,4 +364,3 @@ body {
         }
     }
 }
-
