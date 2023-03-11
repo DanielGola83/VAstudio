@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -49,7 +51,7 @@
             <div class="nav__burgerBtn-bars"></div>
         </div>
 
-        <div class="nav__shadow"></div>
+        <!-- <div class="nav__shadow"></div> -->
 
     </div>
 
@@ -79,24 +81,33 @@
 
         </section>
 
-        <section class="galleryOne">
+        <section class="galleryOne gallery__container wrapper">
 
-            <a href="img/wizualizacja-3d-wizualizacja-basenu-galleryOne.webp">
-                <img src="img/wizualizacja-3d-wizualizacja-basenu-galleryOne.webp" alt="">
+            <a class="w100" href="img/wizualizacja-3d-wizualizacja-basenu-galleryOne.webp">
+                <img src="img/wizualizacja-3d-wizualizacja-basenu-galleryOne.webp" alt="123xxxxxxxxxx">
             </a>
-            <a href="img/wizualizacja-holu-galleryOne.webp">
+
+            <a class="w33" href="img/wizualizacje-3d-wizualizacja-recepcji-galleryOne.webp">
+                <img src="img/wizualizacje-3d-wizualizacja-recepcji-galleryOne.webp" alt="123">
+            </a>
+
+            <a class="w33" href="img/wizualizacja-holu-galleryOne.webp">
                 <img src="img/wizualizacja-holu-galleryOne.webp" alt="">
             </a>
-            <a href="img/wizualizacja-holu-galleryOne.webp">
-                <img src="img/wizualizacja-holu-galleryOne.webp" alt="">
-            </a>
-            <a href="img/wizualizacja-holu-galleryOne.webp">
-                <img src="img/wizualizacja-holu-galleryOne.webp" alt="">
+
+            <a class="w33" href="img/wizualizacje-3d-wizualizacja-lazienki-galleryOne.webp">
+                <img src="img/wizualizacje-3d-wizualizacja-lazienki-galleryOne.webp" alt="123">
             </a>
 
         </section>
 
+
     </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+    <script>
+        lightGallery(document.querySelector('.galleryOne'));
+    </script>
 
     <script src="js/main.js"></script>
 </body>
