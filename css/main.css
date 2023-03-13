@@ -5,7 +5,7 @@
 }
 
 .section-white__padding {
-  padding: 2em 2.5em;
+  padding: 2em 0;
 }
 
 .nav__logoBtn {
@@ -79,6 +79,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2em 2.5em;
 }
 .section-header__title, .section-header__pretitle, .section-header__text {
   max-width: 900px;
@@ -106,7 +107,7 @@
 
 .hl_thin,
 .hl_thick {
-  margin: 2em 0;
+  margin: 2em auto;
   background-color: #000;
 }
 
@@ -132,13 +133,16 @@
 }
 @media (min-width: 576px) {
   .section-header__title {
-    font-size: 4.8rem;
+    font-size: 4rem;
   }
 }
 @media (min-width: 768px) {
   .section-header__pretitle {
     letter-spacing: 0.3em;
   }
+}
+.gallery__container {
+  padding: 2em 0;
 }
 .gallery__container figure,
 .gallery__container img {
@@ -247,6 +251,7 @@ html {
 body {
   font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
+  background-color: #fff;
 }
 
 .nav {
@@ -507,5 +512,76 @@ body {
 @media (min-width: 1100px) {
   .header .section-header__title {
     font-size: 6rem;
+  }
+}
+
+.section-easyWork__box {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+}
+.section-easyWork__title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+}
+.section-easyWork__subtitle {
+  margin: 1em 0;
+  font-size: 1.8rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.6em;
+}
+.section-easyWork__description {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.6em;
+}
+.section-easyWork__icon {
+  margin-bottom: 1em;
+  order: -1;
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  background-position: center;
+}
+.section-easyWork__iconOne {
+  background-image: url(../img/icons/icojakosc2.webp);
+}
+.section-easyWork__iconTwo {
+  background-image: url(../img/icons/icoprezyzja.png);
+}
+.section-easyWork__iconThree {
+  background-image: url(../img/icons/icokomunikacja.png);
+}
+.section-easyWork__iconFour {
+  background-image: url(../img/icons/icoczasrealizacji.png);
+}
+.section-easyWork__iconFive {
+  background-image: url(../img/icons/icozaangazowanie.png);
+}
+.section-easyWork__iconSix {
+  background-image: url(../img/icons/icokreatywnosc.png);
+}
+
+@media (min-width: 768px) {
+  .section-easyWork__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .section-easyWork__box {
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .section-easyWork__box {
+    width: 33.3333333333%;
+  }
+}
+@media (min-width: 1200px) {
+  .section-easyWork__box {
+    padding: 3em;
   }
 }/*# sourceMappingURL=main.css.map */
