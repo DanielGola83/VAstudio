@@ -101,7 +101,8 @@ body {
 // SECTION COMMON ELEMENTS
 
 .section-easyWork,
-.section-action {
+.section-action,
+.section-reviews {
 
     &__container,
     &__title {
@@ -118,7 +119,8 @@ body {
 @media(min-width: 375px) {
 
     .section-easyWork,
-    .section-action {
+    .section-action,
+    .section-reviews {
 
         &__box {
             padding: 1em 1.5em 3em;
@@ -129,7 +131,8 @@ body {
 @media(min-width: 768px) {
 
     .section-easyWork,
-    .section-action {
+    .section-action,
+    .section-reviews {
 
         &__box {
             padding: 2em 2em 4em;
@@ -147,7 +150,8 @@ body {
 @media(min-width: 1200px) {
 
     .section-easyWork,
-    .section-action {
+    .section-action,
+    .section-reviews {
 
         &__box {
             padding: 3em;
@@ -274,7 +278,7 @@ body {
 @media(min-width: 992px) {
     .section-action {
         &__box {
-           width: calc(100% / 3);
+            width: calc(100% / 3);
         }
 
         &__box p:first-of-type {
@@ -288,6 +292,65 @@ body {
     .section-action {
         &__box p:first-of-type {
             height: 380px;
+        }
+    }
+}
+
+// SECTION REVIEWS
+
+.section-reviews {
+    &__box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5em;
+    }
+
+    &__description {
+        margin: 2em 0;
+        text-align: center;
+    }
+
+    &__name {
+        font-size: 1.4rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    &__page {
+        color: $main-Color;
+        font-size: 1.4rem;
+        font-weight: 400;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 30px;
+        background-image: url(../img/icons/icocudzyslowzloty.webp);
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@media(min-width: 992px) {
+    .section-reviews {
+        &__box {
+            margin: 0 15em;
+        }
+    }
+}
+@media(min-width: 1200px) {
+    .section-reviews {
+        &__box {
+            margin: 0 25em;
         }
     }
 }

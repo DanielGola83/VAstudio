@@ -511,11 +511,14 @@ body {
 
 .section-easyWork__container, .section-easyWork__title,
 .section-action__container,
-.section-action__title {
+.section-action__title,
+.section-reviews__container,
+.section-reviews__title {
   line-height: 1.6em;
 }
 .section-easyWork__box,
-.section-action__box {
+.section-action__box,
+.section-reviews__box {
   display: flex;
   flex-direction: column;
   padding: 1em 1em 3em;
@@ -523,17 +526,20 @@ body {
 
 @media (min-width: 375px) {
   .section-easyWork__box,
-  .section-action__box {
+  .section-action__box,
+  .section-reviews__box {
     padding: 1em 1.5em 3em;
   }
 }
 @media (min-width: 768px) {
   .section-easyWork__box,
-  .section-action__box {
+  .section-action__box,
+  .section-reviews__box {
     padding: 2em 2em 4em;
   }
   .section-easyWork__container,
-  .section-action__container {
+  .section-action__container,
+  .section-reviews__container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -541,7 +547,8 @@ body {
 }
 @media (min-width: 1200px) {
   .section-easyWork__box,
-  .section-action__box {
+  .section-action__box,
+  .section-reviews__box {
     padding: 3em;
   }
 }
@@ -641,5 +648,51 @@ body {
 @media (min-width: 1200px) {
   .section-action__box p:first-of-type {
     height: 380px;
+  }
+}
+.section-reviews__box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5em;
+}
+.section-reviews__description {
+  margin: 2em 0;
+  text-align: center;
+}
+.section-reviews__name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+}
+.section-reviews__page {
+  color: #c39e6d;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+}
+.section-reviews__icon {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background-image: url(../img/icons/icocudzyslowzloty.webp);
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 992px) {
+  .section-reviews__box {
+    margin: 0 15em;
+  }
+}
+@media (min-width: 1200px) {
+  .section-reviews__box {
+    margin: 0 25em;
   }
 }/*# sourceMappingURL=main.css.map */
