@@ -4,18 +4,6 @@
     max-width: 1400px;
 }
 
-
-.section-margin {
-    margin: 0 auto;
-}
-
-@media(min-width: 768px) {
-
-    .section-margin {
-        margin: 3em auto 5em;
-    }
-}
-
 // LOGO
 
 .nav {
@@ -497,6 +485,19 @@
     }
 }
 
+// SECTION MARGIN
+
+.section-margin {
+    margin: 0 auto 3em;
+}
+
+@media(min-width: 768px) {
+
+    .section-margin {
+        margin: 3em auto 5em;
+    }
+}
+
 // SECTION HEADER
 
 .section-header {
@@ -504,13 +505,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 3em;
+        margin: 2em 1em;
     }
 
     &__title,
     &__pretitle,
     &__text {
-        max-width: 900px;
+        max-width: 1100px;
         text-align: center;
     }
 
