@@ -18,6 +18,7 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 1.6rem;
+    background-color: $pure-white;
 }
 
 // HEADER 
@@ -96,3 +97,98 @@ body {
     }
 }
 
+// SECTION EASYWORK
+
+.section-easyWork {
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        padding: 2em;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        font-style: italic;
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        margin: 1em 0;
+        font-size: 1.8rem;
+        font-weight: 300;
+        font-style: italic;
+        line-height: 1.6em;
+    }
+
+    &__description {
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.6em;
+    }
+
+    &__icon {
+        margin-bottom: 1em;
+        order: -1;
+        width: 60px;
+        height: 60px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__iconOne {
+        background-image: url(../img/icons/icojakosc2.webp);
+    }
+
+    &__iconTwo {
+        background-image: url(../img/icons/icoprezyzja.webp);
+    }
+
+    &__iconThree {
+        background-image: url(../img/icons/icokomunikacja.webp);
+    }
+
+    &__iconFour {
+        background-image: url(../img/icons/icoczasrealizacji.webp);
+    }
+
+    &__iconFive {
+        background-image: url(../img/icons/icozaangazowanie.webp);
+    }
+
+    &__iconSix {
+        background-image: url(../img/icons/icokreatywnosc.webp);
+    }
+
+}
+
+@media(min-width: 768px) {
+    .section-easyWork {
+        &__container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        &__box {
+            width: 50%;
+        }
+    }
+}
+
+@media(min-width: 992px) {
+    .section-easyWork {
+        &__box {
+            width: calc(100% / 3);
+        }
+    }
+}
+
+@media(min-width: 1200px) {
+    .section-easyWork {
+        &__box {
+            padding: 3em;
+        }
+    }
+}

@@ -4,8 +4,16 @@
     max-width: 1400px;
 }
 
-.section-white__padding {
-    padding: 2em 2.5em;
+
+.section-margin {
+    margin: 0 auto;
+}
+
+@media(min-width: 768px) {
+
+    .section-margin {
+        margin: 3em auto 5em;
+    }
 }
 
 // LOGO
@@ -496,6 +504,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 3em;
     }
 
     &__title,
@@ -503,7 +512,6 @@
     &__text {
         max-width: 900px;
         text-align: center;
-
     }
 
     &__pretitle {
@@ -515,7 +523,6 @@
         color: $main-Color;
         order: -1;
     }
-
 
     &__title {
         font-size: 3.2rem;
@@ -532,7 +539,7 @@
 
 .hl_thin,
 .hl_thick {
-    margin: 2em 0;
+    margin: 2em auto;
     background-color: $pure-black;
 }
 
@@ -557,22 +564,6 @@
 
         &__title {
             font-size: 4rem;
-        }
-    }
-}
-
-@media(min-width: 576px) {
-    .section-header {
-        &__title {
-            font-size: 4.8rem;
-        }
-    }
-}
-
-@media(min-width: 768px) {
-    .section-header {
-        &__pretitle {
-            letter-spacing: .3em;
         }
     }
 }
