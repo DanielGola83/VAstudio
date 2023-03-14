@@ -511,11 +511,14 @@ body {
 
 .section-easyWork__container, .section-easyWork__title,
 .section-action__container,
-.section-action__title {
+.section-action__title,
+.section-more__container,
+.section-more__title {
   line-height: 1.6em;
 }
 .section-easyWork__box,
-.section-action__box {
+.section-action__box,
+.section-more__box {
   display: flex;
   flex-direction: column;
   padding: 1em 1em 3em;
@@ -523,19 +526,29 @@ body {
 
 @media (min-width: 375px) {
   .section-easyWork__box,
-  .section-action__box {
+  .section-action__box,
+  .section-more__box {
     padding: 1em 1.5em 3em;
   }
 }
 @media (min-width: 768px) {
   .section-easyWork__box,
-  .section-action__box {
+  .section-action__box,
+  .section-more__box {
     padding: 2em 2em 4em;
+  }
+  .section-easyWork__container,
+  .section-action__container,
+  .section-more__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 @media (min-width: 1200px) {
   .section-easyWork__box,
-  .section-action__box {
+  .section-action__box,
+  .section-more__box {
     padding: 3em;
   }
 }
@@ -583,11 +596,6 @@ body {
 }
 
 @media (min-width: 768px) {
-  .section-easyWork__container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
   .section-easyWork__box {
     width: 50%;
   }
@@ -629,10 +637,6 @@ body {
 }
 
 @media (min-width: 768px) {
-  .section-action__container {
-    display: flex;
-    flex-wrap: wrap;
-  }
   .section-action__box {
     width: 50%;
   }
@@ -651,5 +655,46 @@ body {
 @media (min-width: 1200px) {
   .section-action__box p:first-of-type {
     height: 250px;
+  }
+}
+.section-more__container strong {
+  font-weight: 700;
+}
+.section-more__title {
+  order: -2;
+  font-size: 2.6rem;
+  font-weight: 300;
+}
+.section-more__boxOne p:first-of-type {
+  font-size: 2.4rem;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.5em;
+}
+.section-more__boxTwo p:first-of-type {
+  padding-bottom: 2em;
+}
+.section-more__boxThree {
+  font-size: 2rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 2.8rem;
+}
+
+@media (min-width: 768px) {
+  .section-more__container {
+    align-items: flex-end;
+  }
+  .section-more__boxTwo p:first-of-type {
+    padding-bottom: 0;
+  }
+  .section-more__box {
+    width: 50%;
+  }
+  .section-more__boxThree {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1100px;
+    text-align: center;
   }
 }/*# sourceMappingURL=main.css.map */
