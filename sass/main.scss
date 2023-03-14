@@ -101,8 +101,7 @@ body {
 // SECTION COMMON ELEMENTS
 
 .section-easyWork,
-.section-action,
-.section-more {
+.section-action {
 
     &__container,
     &__title {
@@ -119,8 +118,7 @@ body {
 @media(min-width: 375px) {
 
     .section-easyWork,
-    .section-action,
-    .section-more {
+    .section-action {
 
         &__box {
             padding: 1em 1.5em 3em;
@@ -131,8 +129,7 @@ body {
 @media(min-width: 768px) {
 
     .section-easyWork,
-    .section-action,
-    .section-more {
+    .section-action {
 
         &__box {
             padding: 2em 2em 4em;
@@ -150,8 +147,7 @@ body {
 @media(min-width: 1200px) {
 
     .section-easyWork,
-    .section-action,
-    .section-more {
+    .section-action {
 
         &__box {
             padding: 3em;
@@ -275,28 +271,15 @@ body {
     }
 }
 
-@media(min-width: 768px) {
-    .section-action {
-        &__box {
-            width: 50%;
-        }
-
-        &__box p:first-of-type {
-            height: 350px;
-        }
-    }
-}
-
 @media(min-width: 992px) {
     .section-action {
-
         &__box {
-            width: 50%;
-            ;
+           width: calc(100% / 3);
         }
 
         &__box p:first-of-type {
-            height: 300px;
+            height: 500px;
+            border-bottom: 1px solid $main-Color;
         }
     }
 }
@@ -304,62 +287,7 @@ body {
 @media(min-width: 1200px) {
     .section-action {
         &__box p:first-of-type {
-            height: 250px;
-        }
-    }
-}
-
-// SECTION MORE
-
-.section-more {
-
-    &__container strong {
-        font-weight: 700;
-    }
-
-    &__title {
-        order: -2;
-        font-size: 2.6rem;
-        font-weight: 300;
-    }
-
-    &__boxOne p:first-of-type {
-        font-size: 2.4rem;
-        font-weight: 700;
-        font-style: italic;
-        line-height: 1.5em;
-    }
-
-    &__boxTwo p:first-of-type {
-        padding-bottom: 2em;
-    }
-
-    &__boxThree {
-        font-size: 2rem;
-        font-weight: 300;
-        font-style: italic;
-        line-height: 2.8rem;
-    }
-}
-
-@media(min-width: 768px) {
-    .section-more {
-        &__container {
-            align-items: flex-end;
-        }
-
-        &__boxTwo p:first-of-type {
-            padding-bottom: 0;
-        }
-
-        &__box {
-            width: 50%;
-        }
-        &__boxThree {
-            margin: 0 auto;
-            width: 100%;
-            max-width: 1100px;
-            text-align: center;
+            height: 380px;
         }
     }
 }
