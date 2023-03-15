@@ -4,6 +4,11 @@
     max-width: 1400px;
 }
 
+.main__background-color {
+    background-color: $pure-white;
+    z-index: 10;
+}
+
 // LOGO
 
 .nav {
@@ -95,6 +100,63 @@
 
     .open--active &__burgerBtn-bars::after {
         transform: rotate(-45deg) translate(20px, 20px);
+    }
+}
+
+// BUTTON
+
+// HEADER
+
+.button {
+    display: block;
+    margin: 0 auto;
+    padding: 1em;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: .4rem;
+    text-decoration: none;
+    border: 3px solid $main-Color;
+    transition: background-color .2s, color .2s, filter .2s;
+
+    &__header {
+        margin: 1em auto;
+    }
+
+    &--empty {
+        color: $main-Color;
+    }
+
+    &--empty:hover {
+        background-color: $main-Color;
+        color: $pure-white;
+    }
+
+    &--full {
+        color: $pure-white;
+        background-color: $main-Color;
+    }
+
+    &--full:hover {
+        color: $main-Color;
+        background-color: $pure-white;
+    }
+}
+
+@media(min-width: 375px) {
+    .button {
+        &__header {
+            margin: 2em auto;
+            padding: 1.2em;
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    .button {
+        &__header {
+            position: absolute;
+            bottom: 25vh;
+        }
     }
 }
 
@@ -488,13 +550,13 @@
 // SECTION MARGIN
 
 .section-margin {
-    margin: 0 auto 3em;
+    padding: 2em 0;
 }
 
 @media(min-width: 768px) {
 
     .section-margin {
-        margin: 3em auto 5em;
+        padding: 2em 0;
     }
 }
 
@@ -505,7 +567,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 2em 1em;
+        padding: 1em 1em 3em;
     }
 
     &__title,
@@ -540,17 +602,28 @@
 
 .hl_thin,
 .hl_thick {
-    margin: 2em auto;
+    position: relative;
+    width: 100%;
+    height: 64px;
+}
+
+.hl_thin::after,
+.hl_thick::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: $pure-black;
 }
 
-.hl_thin {
+.hl_thin::after {
     height: 1px;
     width: 50%;
     max-width: 200px;
 }
 
-.hl_thick {
+.hl_thick::after {
     height: 5px;
     width: 40%;
     max-width: 150px;

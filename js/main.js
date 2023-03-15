@@ -24,3 +24,4 @@ const handleNav = () => {
 }
 
 navBtn.addEventListener('click', handleNav);
+navShadow.addEventListener('click', handleNav)
