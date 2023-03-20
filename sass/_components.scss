@@ -13,19 +13,14 @@
 
 .nav {
 
-    &__logoBtn {
-        z-index: 300;
-    }
-
     &__logo-box {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         background: none;
         border: none;
         cursor: pointer;
         filter: invert(1);
-        z-index: 300;
     }
 
     &__logo-box:hover {
@@ -241,11 +236,27 @@
         opacity: 0;
         background-color: $pure-black;
         z-index: 10;
-        transition: opacity .4s;
+        transform: translateX(100%);
+        transition: opacity .3s, transform .01s;
+    }
+
+    &__shadow:before {
+        content: '';
+        position: fixed;
+        top: 1.5em;
+        left: 1.5em;
+        width: 65px;
+        height: 36px;
+        background-image: url('../img/icons/VA-logo-color.svg');
+        background-size: cover;
+        background-position: center;
+        cursor: pointer;
+        filter: invert(0);
     }
 
     &__shadow--active {
         opacity: .9;
+        transform: translateX(0);
     }
 }
 
@@ -292,6 +303,13 @@
         &__burgerBtn-bars::after {
             transform: translateY(15px);
         }
+
+        &__shadow:before {
+            top: 3em;
+            left: 3em;
+            width: 90px;
+            height: 49.84px;
+        }
     }
 }
 
@@ -324,7 +342,8 @@
         &__logoBtn,
         &__social {
             position: relative;
-            max-width: 200px;
+            ;
+            width: 200px;
             transform: translateX(0);
         }
 
@@ -421,15 +440,80 @@
         // BURGER BUTTON & SHADOW
 
         &__burgerBtn,
-        &__shadow {
+        &__shadow,
+        &__shadow:before {
             display: none;
         }
+
     }
 }
 
 // GALLERY
 
 .gallery {
+    // xxx
+    &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        a {
+            margin: .15em;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: filter .3s;
+        }
+
+        img:hover {
+            filter: brightness(70%);
+        }
+    }
+
+    &__w100,
+    &__w33,
+    &__w66 {
+        height: 45vw;
+        max-height: 600px;
+    }
+
+    &__w100 {
+        width: 100%;
+    }
+
+    &__w33 {
+        width: calc((100% / 3) - .3em);
+    }
+
+    &__w33half {
+        width: calc((100% / 3) - .3em);
+        height: 22.5vw;
+        max-height: 300px;
+    }
+
+    &__w66 {
+        width: calc((100% / 3) * 2 - .3em);
+    }
+
+    &__title-box {
+        bottom: 30px;
+        left: 30px;
+    }
+
+    &__title {
+        font-size: 1.6rem;
+        letter-spacing: .3em;
+    }
+
+    &__caption {
+        font-size: 6rem;
+    }
+    // xxx
     &__container {
 
         figure,

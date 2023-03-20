@@ -9,18 +9,14 @@
   z-index: 10;
 }
 
-.nav__logoBtn {
-  z-index: 300;
-}
 .nav__logo-box {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background: none;
   border: none;
   cursor: pointer;
   filter: invert(1);
-  z-index: 300;
 }
 .nav__logo-box:hover {
   animation: logoAnimation 0.5s;
@@ -186,10 +182,25 @@
   opacity: 0;
   background-color: #000;
   z-index: 10;
-  transition: opacity 0.4s;
+  transform: translateX(100%);
+  transition: opacity 0.3s, transform 0.01s;
+}
+.nav__shadow:before {
+  content: "";
+  position: fixed;
+  top: 1.5em;
+  left: 1.5em;
+  width: 65px;
+  height: 36px;
+  background-image: url("../img/icons/VA-logo-color.svg");
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  filter: invert(0);
 }
 .nav__shadow--active {
   opacity: 0.9;
+  transform: translateX(0);
 }
 
 @media (min-width: 768px) {
@@ -222,6 +233,12 @@
   .nav__burgerBtn-bars::after {
     transform: translateY(15px);
   }
+  .nav__shadow:before {
+    top: 3em;
+    left: 3em;
+    width: 90px;
+    height: 49.84px;
+  }
 }
 @media (min-width: 992px) {
   .nav {
@@ -248,7 +265,7 @@
   }
   .nav__logoBtn, .nav__social {
     position: relative;
-    max-width: 200px;
+    width: 200px;
     transform: translateX(0);
   }
   .nav__social {
@@ -275,7 +292,7 @@
   }
   .nav__item {
     position: relative;
-    color: hsl(0, 0%, 99%);
+    color: #ddd;
     transition: color 0.2s;
   }
   .nav__item:hover {
@@ -319,9 +336,58 @@
   .nav__social li {
     margin-right: 0;
   }
-  .nav__burgerBtn, .nav__shadow {
+  .nav__burgerBtn, .nav__shadow, .nav__shadow:before {
     display: none;
   }
+}
+.gallery__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.gallery__container a {
+  margin: 0.15em;
+}
+.gallery__container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: filter 0.3s;
+}
+.gallery__container img:hover {
+  filter: brightness(70%);
+}
+.gallery__w100, .gallery__w33, .gallery__w66 {
+  height: 45vw;
+  max-height: 600px;
+}
+.gallery__w100 {
+  width: 100%;
+}
+.gallery__w33 {
+  width: calc(33.3333333333% - 0.3em);
+}
+.gallery__w33half {
+  width: calc(33.3333333333% - 0.3em);
+  height: 22.5vw;
+  max-height: 300px;
+}
+.gallery__w66 {
+  width: calc(66.6666666667% - 0.3em);
+}
+.gallery__title-box {
+  bottom: 30px;
+  left: 30px;
+}
+.gallery__title {
+  font-size: 1.6rem;
+  letter-spacing: 0.3em;
+}
+.gallery__caption {
+  font-size: 6rem;
 }
 .gallery__container figure,
 .gallery__container img {
@@ -518,7 +584,7 @@ body {
   height: 100vh;
   padding: 1em;
   color: #fff;
-  background-image: url(../img/hero-small.webp);
+  background-image: url(../img/20200608-cam06-02-1920x2071.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
