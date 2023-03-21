@@ -126,13 +126,15 @@
   display: flex;
   right: 0;
   width: 65%;
-  transition: transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
   transform: translateX(100%);
   z-index: 90;
   padding: 2em;
+  opacity: 0;
 }
 .nav--active {
   transform: translateX(0);
+  opacity: 1;
 }
 .nav__main-nav {
   flex-direction: column;
@@ -181,9 +183,8 @@
   top: 0;
   opacity: 0;
   background-color: #000;
-  z-index: 10;
-  transform: translateX(100%);
-  transition: opacity 0.25s 0.05s, transform 0.05s;
+  transition: opacity 0.3s;
+  pointer-events: none;
 }
 .nav__shadow:before {
   content: "";
@@ -196,11 +197,10 @@
   background-size: cover;
   background-position: center;
   cursor: pointer;
-  filter: invert(0);
 }
 .nav__shadow--active {
   opacity: 0.9;
-  transform: translateX(0);
+  pointer-events: auto;
 }
 
 @media (min-width: 768px) {
@@ -315,6 +315,7 @@
   }
   .nav__main-nav, .nav__social {
     padding: 0;
+    opacity: 1;
   }
   .nav__item {
     padding: 2em 0;

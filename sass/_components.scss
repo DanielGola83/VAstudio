@@ -170,14 +170,16 @@
         display: flex;
         right: 0;
         width: 65%;
-        transition: transform .3s;
+        transition: transform .3s, opacity .3s;
         transform: translateX(100%);
         z-index: 90;
         padding: 2em;
+        opacity: 0;
     }
     
     &--active {
         transform: translateX(0);
+        opacity: 1;
     }
 
     &__main-nav {
@@ -235,9 +237,8 @@
         top: 0;
         opacity: 0;
         background-color: $pure-black;
-        z-index: 10;
-        transform: translateX(100%);
-        transition: opacity .25s .05s, transform .05s;
+        transition: opacity .3s;
+        pointer-events: none;
     }
 
     &__shadow:before {
@@ -251,12 +252,11 @@
         background-size: cover;
         background-position: center;
         cursor: pointer;
-        filter: invert(0);
     }
 
     &__shadow--active {
         opacity: .9;
-        transform: translateX(0);
+        pointer-events: auto;
     }
 }
 
@@ -409,6 +409,7 @@
         &__main-nav,
         &__social {
             padding: 0;
+            opacity: 1;
         }
 
         &__item {
