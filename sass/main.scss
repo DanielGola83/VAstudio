@@ -33,10 +33,10 @@ body {
     padding: 1em;
     color: $pure-white;
     background-image: url(../img/20200608-cam06-02-1920x2071.jpg);
-    background-size: cover;
     background-position: center;
+    background-size: cover;
     background-attachment: fixed;
-    z-index: 0;
+    z-index: 10;
 
     &::before {
         content: '';
@@ -398,5 +398,3 @@ body {
         color: $main-Color;
     }
 }
-
-
