@@ -5,6 +5,7 @@
 }
 
 .main__background-color {
+    position: relative;
     background-color: $pure-white;
     z-index: 10;
 }
@@ -13,6 +14,9 @@
 
 .nav {
 
+    &__logoBtn {
+        order: -1;
+    }
     &__logo-box {
         display: flex;
         justify-content: flex-start;
@@ -32,8 +36,6 @@
         width: 65px;
     }
 }
-
-// LOGO ANIMATION HOVER
 
 @keyframes logoAnimation {
     from {
@@ -100,22 +102,16 @@
 
 // BUTTON
 
-// HEADER
-
 .button {
     display: block;
     margin: 0 auto;
     padding: 1em;
     font-size: 1.6rem;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: .4rem;
     text-decoration: none;
     border: 3px solid $main-Color;
-    transition: background-color .2s, color .2s, filter .2s;
-
-    &__header {
-        margin: 1em auto;
-    }
+    transition: background-color .2s, color .2s, filter .2s,;
 
     &--empty {
         color: $main-Color;
@@ -133,15 +129,20 @@
 
     &--full:hover {
         color: $main-Color;
-        background-color: $pure-white;
+        background-color: transparent;
+    }
+}
+
+.button {
+    &__header {
+        margin: 3em auto 0;
     }
 }
 
 @media(min-width: 375px) {
     .button {
         &__header {
-            margin: 2em auto;
-            padding: 1.2em;
+            margin: 4em auto 0;
         }
     }
 }
@@ -149,8 +150,14 @@
 @media(min-width: 768px) {
     .button {
         &__header {
-            position: absolute;
-            bottom: 25vh;
+            margin: 5em auto 0;
+        }
+    }
+}
+@media(min-width: 992px) {
+    .button {
+        &__header {
+            margin: 6em auto 0;
         }
     }
 }
@@ -188,7 +195,7 @@
         align-items: flex-start;
         top: 0;
         height: 100vh;
-        background-color: $complementary-Color;
+        background-color: $navigation;
         z-index: 90;
     }
 
@@ -501,7 +508,6 @@
         &__shadow:before {
             display: none;
         }
-
     }
 }
 
@@ -717,6 +723,14 @@
 
         &__title {
             font-size: 4rem;
+        }
+    }
+}
+
+@media(min-width: 992px) {
+    .section-header {
+        &__container {
+            padding: 1em 1em 3em;
         }
     }
 }
