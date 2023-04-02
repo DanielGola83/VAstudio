@@ -17,6 +17,7 @@
     &__logoBtn {
         order: -1;
     }
+
     &__logo-box {
         display: flex;
         justify-content: flex-start;
@@ -111,7 +112,7 @@
     letter-spacing: .4rem;
     text-decoration: none;
     border: 3px solid $main-Color;
-    transition: background-color .2s, color .2s, filter .2s,;
+    transition: background-color .2s, color .2s, filter .2s, ;
 
     &--empty {
         color: $main-Color;
@@ -154,6 +155,7 @@
         }
     }
 }
+
 @media(min-width: 992px) {
     .button {
         &__header {
@@ -171,8 +173,7 @@
     align-items: center;
     z-index: 100;
 
-    &__main-nav,
-    &__social {
+    &__main-nav {
         position: fixed;
         display: flex;
         right: 0;
@@ -199,32 +200,10 @@
         z-index: 90;
     }
 
-    &__social {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        bottom: 0;
-        height: auto;
-
-        li {
-            list-style-type: none;
-            transition: transform .3s;
-        }
-
-        li:hover {
-            transform: translateY(-10px);
-        }
-    }
-
     &__main-nav-item {
         position: relative;
         padding: .75em 0;
         list-style-type: none;
-        transition: transform .3s;
-    }
-
-    &__main-nav-item:hover {
-        transform: translateX(10px);
     }
 
     &__item {
@@ -270,18 +249,77 @@
     // DROPDOWN MENU
 
     &__dropdown {
+        padding: 1em 0 0 .5em;
+
+        li {
+            list-style-type: none;
+            padding: .3em 0;
+
+            a {
+                font-size: 1.2rem;
+                font-style: italic;
+            }
+        }
+    }
+
+    &__main-nav-offer {
+        position: relative;
+    }
+
+    &__main-nav-offer:before,
+    &__main-nav-offer:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 15px;
+        height: 2px;
+        background-color: $main-Color;
+    }
+
+    &__main-nav-offer:before {
+        right: -30px;
+        transform: rotate(45deg);
+    }
+
+    &__main-nav-offer:after {
+        right: -40px;
+        transform: rotate(-45deg);
+    }
+
+    // CTA BUTTON
+
+    &__ctaBtn {
+        display: none;
+    }
+
+    // DROPPING CONTACT
+
+    &__droppingContact {
         display: none;
     }
 }
 
 // NAVIGATION MEDIA
+@media(min-width: 375px) {
+    .nav {
+        &__dropdown {
+
+            li {
+                padding: .5em 0;
+
+                a {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
 
 @media(min-width: 768px) {
 
     .nav {
 
-        &__main-nav,
-        &__social {
+        &__main-nav {
             width: 45%;
             padding: 3em;
         }
@@ -324,6 +362,17 @@
             width: 90px;
             height: 49.84px;
         }
+
+        &__dropdown {
+
+            li {
+                padding: .8em 0;
+
+                a {
+                    font-size: 2rem;
+                }
+            }
+        }
     }
 }
 
@@ -351,42 +400,79 @@
             background: none;
         }
 
-        // LOGO & SOCIAL CONTAINER
+        // LOGO
 
-        &__logoBtn,
-        &__social {
+        &__logoBtn {
             position: relative;
-            ;
-            width: 200px;
+            width: 300px;
             transform: translateX(0);
-        }
-
-        &__social {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            align-items: center;
-
-            a {
-                padding: 1em;
-                transition: color .2s;
-            }
-
-            a:hover {
-                color: $main-Color;
-            }
-
-            li {
-                transition: transform .2s;
-            }
-
-            li:hover {
-                transform: translateY(-5px);
-            }
         }
 
         &__logo-img {
             margin-left: 0;
+        }
+
+        // CTA BUTTON
+
+        &__ctaBtn {
+            display: block;
+            width: 300px;
+            text-align: right;
+
+            a {
+                padding: 1em;
+                letter-spacing: .2em;
+                color: $pure-white;
+                background-color: $main-Color;
+                transition: background-color .2s;
+            }
+        }
+
+        &__ctaBtn:hover a {
+            background-color: $main-Color__Hover;
+        }
+
+        // DROPPING CONTACT
+
+        &__droppingContact {
+            display: block;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 50px;
+            text-align: right;
+            padding: 0 3em;
+
+            transform: translateY(-100%);
+
+            transition: transform .2s;
+
+            a {
+                position: relative;
+                top: .6em;
+                padding: .6em 1.2em;
+                letter-spacing: .1em;
+                font-weight: 300;
+                font-style: italic;
+                font-size: .9em;
+                text-decoration: none;
+                color: $light-white;
+                background-color: $complementary-Color;
+                transition: color .2s;
+            }
+
+            a:hover {
+                color: $pure-white;
+            }
+        }
+
+        &__droppingContact--show {
+            transform: translateY(0%);
+        }
+
+        &__droppingContact--hide {
+            transform: translateY(-100%);
         }
 
         // HOVER ANIMATIONS
@@ -418,6 +504,16 @@
             transform: scaleX(1);
         }
 
+        // UNDERLINE ACTIVE PAGE
+
+        &--activeUnderline:before {
+            transform: scaleX(1);
+        }
+
+        &--activeColor {
+            color: $pure-white;
+        }
+
         // DROPDOWN MENU
 
         &__dropdown {
@@ -435,6 +531,8 @@
                 width: 200px;
                 padding: 1em .5em;
                 color: $pure-black;
+                font-size: 1.5rem;
+                font-style: normal;
                 background-color: $pure-white;
                 transition: color 0s;
             }
@@ -445,7 +543,7 @@
             }
 
             li {
-                list-style-type: none;
+                padding: 0;
             }
         }
 
@@ -467,10 +565,14 @@
             transform: translateY(0);
         }
 
+        &__main-nav-offer:before,
+        &__main-nav-offer:after {
+            display: none;
+        }
+
         // RESET
 
-        &__main-nav,
-        &__social {
+        &__main-nav {
             padding: 0;
             opacity: 1;
         }
@@ -493,14 +595,6 @@
             margin-top: 0;
         }
 
-        &__social {
-            bottom: 0;
-
-            li {
-                margin-right: 0;
-            }
-        }
-
         // BURGER BUTTON & SHADOW
 
         &__burgerBtn,
@@ -510,6 +604,19 @@
         }
     }
 }
+
+@media(min-width: 1200px) {
+
+    .nav {
+        &__ctaBtn {
+            a {
+                letter-spacing: .3em;
+            }
+        }
+    }
+}
+
+
 
 // GALLERY
 

@@ -129,7 +129,7 @@
   align-items: center;
   z-index: 100;
 }
-.nav__main-nav, .nav__social {
+.nav__main-nav {
   position: fixed;
   display: flex;
   right: 0;
@@ -153,28 +153,10 @@
   background-color: #142123;
   z-index: 90;
 }
-.nav__social {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  bottom: 0;
-  height: auto;
-}
-.nav__social li {
-  list-style-type: none;
-  transition: transform 0.3s;
-}
-.nav__social li:hover {
-  transform: translateY(-10px);
-}
 .nav__main-nav-item {
   position: relative;
   padding: 0.75em 0;
   list-style-type: none;
-  transition: transform 0.3s;
-}
-.nav__main-nav-item:hover {
-  transform: translateX(10px);
 }
 .nav__item {
   font-size: 1.8rem;
@@ -212,11 +194,52 @@
   pointer-events: auto;
 }
 .nav__dropdown {
+  padding: 1em 0 0 0.5em;
+}
+.nav__dropdown li {
+  list-style-type: none;
+  padding: 0.3em 0;
+}
+.nav__dropdown li a {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.nav__main-nav-offer {
+  position: relative;
+}
+.nav__main-nav-offer:before, .nav__main-nav-offer:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 15px;
+  height: 2px;
+  background-color: #c39e6d;
+}
+.nav__main-nav-offer:before {
+  right: -30px;
+  transform: rotate(45deg);
+}
+.nav__main-nav-offer:after {
+  right: -40px;
+  transform: rotate(-45deg);
+}
+.nav__ctaBtn {
+  display: none;
+}
+.nav__droppingContact {
   display: none;
 }
 
+@media (min-width: 375px) {
+  .nav__dropdown li {
+    padding: 0.5em 0;
+  }
+  .nav__dropdown li a {
+    font-size: 1.5rem;
+  }
+}
 @media (min-width: 768px) {
-  .nav__main-nav, .nav__social {
+  .nav__main-nav {
     width: 45%;
     padding: 3em;
   }
@@ -251,6 +274,12 @@
     width: 90px;
     height: 49.84px;
   }
+  .nav__dropdown li {
+    padding: 0.8em 0;
+  }
+  .nav__dropdown li a {
+    font-size: 2rem;
+  }
 }
 @media (min-width: 992px) {
   .nav {
@@ -275,32 +304,62 @@
     transform: translateX(0);
     background: none;
   }
-  .nav__logoBtn, .nav__social {
+  .nav__logoBtn {
     position: relative;
-    width: 200px;
+    width: 300px;
     transform: translateX(0);
-  }
-  .nav__social {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  .nav__social a {
-    padding: 1em;
-    transition: color 0.2s;
-  }
-  .nav__social a:hover {
-    color: #c39e6d;
-  }
-  .nav__social li {
-    transition: transform 0.2s;
-  }
-  .nav__social li:hover {
-    transform: translateY(-5px);
   }
   .nav__logo-img {
     margin-left: 0;
+  }
+  .nav__ctaBtn {
+    display: block;
+    width: 300px;
+    text-align: right;
+  }
+  .nav__ctaBtn a {
+    padding: 1em;
+    letter-spacing: 0.2em;
+    color: #fff;
+    background-color: #c39e6d;
+    transition: background-color 0.2s;
+  }
+  .nav__ctaBtn:hover a {
+    background-color: #9b7d55;
+  }
+  .nav__droppingContact {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 50px;
+    text-align: right;
+    padding: 0 3em;
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+  }
+  .nav__droppingContact a {
+    position: relative;
+    top: 0.6em;
+    padding: 0.6em 1.2em;
+    letter-spacing: 0.1em;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 0.9em;
+    text-decoration: none;
+    color: #ddd;
+    background-color: #202020;
+    transition: color 0.2s;
+  }
+  .nav__droppingContact a:hover {
+    color: #fff;
+  }
+  .nav__droppingContact--show {
+    transform: translateY(0%);
+  }
+  .nav__droppingContact--hide {
+    transform: translateY(-100%);
   }
   .nav__item {
     position: relative;
@@ -325,6 +384,12 @@
   .nav__main-nav-item:hover::before {
     transform: scaleX(1);
   }
+  .nav--activeUnderline:before {
+    transform: scaleX(1);
+  }
+  .nav--activeColor {
+    color: #fff;
+  }
   .nav__dropdown {
     display: block;
     position: absolute;
@@ -340,6 +405,8 @@
     width: 200px;
     padding: 1em 0.5em;
     color: #000;
+    font-size: 1.5rem;
+    font-style: normal;
     background-color: #fff;
     transition: color 0s;
   }
@@ -348,7 +415,7 @@
     color: #fff;
   }
   .nav__dropdown li {
-    list-style-type: none;
+    padding: 0;
   }
   .nav__dropdown::before {
     content: "";
@@ -366,7 +433,10 @@
     pointer-events: auto;
     transform: translateY(0);
   }
-  .nav__main-nav, .nav__social {
+  .nav__main-nav-offer:before, .nav__main-nav-offer:after {
+    display: none;
+  }
+  .nav__main-nav {
     padding: 0;
     opacity: 1;
   }
@@ -384,14 +454,13 @@
   .nav__main-nav-item:first-child {
     margin-top: 0;
   }
-  .nav__social {
-    bottom: 0;
-  }
-  .nav__social li {
-    margin-right: 0;
-  }
   .nav__burgerBtn, .nav__shadow, .nav__shadow:before {
     display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .nav__ctaBtn a {
+    letter-spacing: 0.3em;
   }
 }
 .gallery__container figure,
@@ -622,7 +691,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(../img/x01.jpg);
+  background-image: url(../img/grafika-01.webp);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -672,6 +741,11 @@ body {
   }
 }
 
+@media (min-width: 992px) {
+  .header {
+    height: 85vh;
+  }
+}
 .section-easyWork__container, .section-easyWork__title,
 .section-action__container,
 .section-action__title,
@@ -1106,11 +1180,7 @@ body {
 }
 .section-reviews__box {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 1em;
+  text-align: center;
 }
 .section-reviews__description {
   margin: 2em 0;
@@ -1119,13 +1189,11 @@ body {
 .section-reviews__name {
   font-size: 1.4rem;
   font-weight: 700;
-  text-align: center;
 }
 .section-reviews__page {
   color: #c39e6d;
   font-size: 1.4rem;
   font-weight: 400;
-  text-align: center;
   text-decoration: none;
 }
 .section-reviews__icon {
@@ -1135,7 +1203,7 @@ body {
   transform: translateX(-50%);
   width: 30px;
   height: 30px;
-  background-image: url(../img/icons/icocudzyslowzloty.webp);
+  background-image: url(../img/icons/icoOpinionsQuotes.webp);
   background-size: cover;
   background-position: center;
 }
@@ -1190,11 +1258,19 @@ body {
   }
 }
 @media (min-width: 768px) {
+  .section-reviews__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
   .section-reviews__box {
-    margin: 0 10em;
+    width: 33.3333333333%;
+  }
+  .section-reviews__description {
+    height: 200px;
   }
   .section-reviews__icon {
-    top: 20px;
+    top: 10px;
   }
   .section-logo__container {
     padding: 0 2em;
@@ -1207,8 +1283,8 @@ body {
   }
 }
 @media (min-width: 992px) {
-  .section-reviews__box {
-    margin: 0 15em;
+  .section-reviews__description {
+    height: 150px;
   }
   .section-reviews__icon {
     top: 10px;
@@ -1229,8 +1305,8 @@ body {
   }
 }
 @media (min-width: 1200px) {
-  .section-reviews__box {
-    margin: 0 25em;
+  .section-reviews__description {
+    height: 100px;
   }
   .section-reviews__icon {
     top: 30px;
@@ -1249,7 +1325,7 @@ body {
 .footer__copyright {
   color: #999;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 .section-cooperation__container h3,
 .section-cooperation__container span, .section-cooperation__container a h3,
@@ -1262,6 +1338,11 @@ body {
 .footer__copyright h3,
 .footer__copyright span {
   color: #ccc;
+  font-weight: 500;
+}
+.section-cooperation__copyright span,
+.footer__copyright span {
+  color: #999;
 }
 .section-cooperation .section-header__title, .section-cooperation .section-header__text,
 .footer .section-header__title,
@@ -1298,12 +1379,19 @@ body {
 .section-cooperation__box {
   padding-bottom: 2em;
 }
+.section-cooperation__box p {
+  font-weight: 300;
+}
 .section-cooperation__mail, .section-cooperation__phone {
   padding: 1em 0;
 }
 .section-cooperation__mail a, .section-cooperation__phone a {
   color: #c39e6d;
   font-size: 1.8em;
+  transition: color 0.2s;
+}
+.section-cooperation__mail a:hover, .section-cooperation__phone a:hover {
+  color: #9b7d55;
 }
 
 @media (min-width: 768px) {
@@ -1319,8 +1407,10 @@ body {
   padding: 0 2em;
 }
 .footer__logo {
-  opacity: 0.7;
   line-height: 1.6em;
+}
+.footer__logo img {
+  opacity: 0.7;
 }
 .footer__logo a:hover {
   animation: logoAnimation 0.5s;
@@ -1341,10 +1431,6 @@ body {
   position: relative;
   padding: 1em 0;
   font-size: 1.6rem;
-  font-weight: 500;
-}
-.footer__box span {
-  font-weight: 500;
 }
 .footer__company-addres {
   padding: 1em 0;
@@ -1377,7 +1463,7 @@ body {
     transition: color 0.3s;
   }
   .footer__box a:hover {
-    color: #c39e6d;
+    color: #fff;
   }
   .footer__bottom-text {
     text-align: center;
