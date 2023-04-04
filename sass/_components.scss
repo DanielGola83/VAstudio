@@ -1,3 +1,4 @@
+
 .wrapper {
     margin: 0 auto;
     width: 100%;
@@ -26,15 +27,17 @@
         border: none;
         cursor: pointer;
         filter: invert(1);
-    }
 
+    }
+    
     &__logo-box:hover {
         animation: logoAnimation .5s;
     }
-
+    
     &__logo-img {
         margin: 1.5em;
         width: 65px;
+        height: 100%;
     }
 }
 
@@ -111,7 +114,7 @@
     font-weight: 500;
     letter-spacing: .4rem;
     text-decoration: none;
-    border: 3px solid $main-Color;
+    border: 3px solid $main-Color__dark;
     transition: background-color .2s, color .2s, filter .2s, ;
 
     &--empty {
@@ -125,7 +128,7 @@
 
     &--full {
         color: $pure-white;
-        background-color: $main-Color;
+        background-color: $main-Color__dark;
     }
 
     &--full:hover {
@@ -168,6 +171,7 @@
 
 .nav {
     position: absolute;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -423,13 +427,14 @@
                 padding: 1em;
                 letter-spacing: .2em;
                 color: $pure-white;
-                background-color: $main-Color;
+                background-color: $main-Color__dark;
                 transition: background-color .2s;
             }
         }
 
+    
         &__ctaBtn:hover a {
-            background-color: $main-Color__Hover;
+            background-color: $main-Color;
         }
 
         // DROPPING CONTACT
@@ -616,8 +621,6 @@
     }
 }
 
-
-
 // GALLERY
 
 .gallery {
@@ -775,7 +778,7 @@
         line-height: 2.5rem;
         text-transform: uppercase;
         font-weight: 400;
-        color: $main-Color;
+        color: $pure-black;
         order: -1;
     }
 

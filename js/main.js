@@ -4,6 +4,9 @@ const navBtn = document.querySelector('.nav__burgerBtn');
 const navShadow = document.querySelector('.nav__shadow');
 const footerYear = document.querySelector('.footer__year')
 
+const CTA = document.querySelector('.nav__ctaBtn')
+const newW = document.querySelector('.xxx')
+
 const allNavItems = document.querySelectorAll('.nav__item');
 
 
@@ -21,8 +24,17 @@ const handleNav = () => {
     })
 }
 
+const ddd = () => {
+    newW.classList.add('xxx--active');
+}
+const delet = () => {
+    newW.classList.remove('xxx--active');
+}
+
 navBtn.addEventListener('click', handleNav);
 navShadow.addEventListener('click', handleNav)
+CTA.addEventListener('click', ddd)
+newW.addEventListener('click', delet)
 
 
 // FOOTER YEAR - START
