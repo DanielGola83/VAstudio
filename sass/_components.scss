@@ -220,7 +220,7 @@
     transition: background-color .2s, color .2s, filter .2s, border .2s;
 
     &--empty {
-        color: $main-Color;
+        color: $main-Color__dark;
     }
 
     &--empty:hover {
@@ -235,7 +235,7 @@
     }
 
     &--full:hover {
-        color: $main-Color;
+        color: $main-Color__dark;
         background-color: transparent;
     }
 }
@@ -243,6 +243,7 @@
 .button {
     &__header {
         margin: 3em auto 0;
+        color: $main-Color;
     }
 }
 
@@ -308,7 +309,6 @@
     }
 
     &__main-nav-item {
-        position: relative;
         padding: .75em 0;
         list-style-type: none;
     }
@@ -355,29 +355,19 @@
 
     // DROPDOWN MENU
 
-    &__main-nav-offer {
-        position: relative;
-    }
-
     &__dropdown {
         position: absolute;
-        // left: 0;
-        top: 500%;
+        margin-bottom: 5em;
+        bottom: 0;
         width: 300px;
-        // overflow: hidden;
-        // height: 0;
-        transition: .2s;
-        background-color: $navigation;
-        z-index: 100;
         opacity: 0;
-        
-        // transform: translateX(110%);
-        
+        transition: .2s .5s;
+        transform: translateY(-30px);
+        z-index: 100;
+
         li {
             list-style-type: none;
-            // padding: .3em 0;
-            // margin-left: 2em;
-            
+
             a {
                 font-size: 1.2rem;
                 font-style: italic;
@@ -386,32 +376,8 @@
     }
 
     &__dropdown--active {
-        // transform: translateX(0);
+        transform: translateY(0);
         opacity: 1;
-    }
-
-    &__main-nav-offer {
-        position: relative;
-    }
-
-    &__main-nav-offer:before,
-    &__main-nav-offer:after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        width: 15px;
-        height: 2px;
-        background-color: $main-Color;
-    }
-
-    &__main-nav-offer:before {
-        right: -30px;
-        transform: rotate(45deg);
-    }
-
-    &__main-nav-offer:after {
-        right: -40px;
-        transform: rotate(-45deg);
     }
 
     // CTA BUTTON
@@ -560,6 +526,7 @@
 
         &__ctaBtn:hover a {
             background-color: $main-Color;
+            background-color: $main-Color;
         }
 
         // DROPPING CONTACT
@@ -617,6 +584,10 @@
             color: $pure-white;
         }
 
+        &__main-nav-item {
+            position: relative;
+        }
+
         &__main-nav-item::before {
             content: '';
             position: absolute;
@@ -649,8 +620,10 @@
         &__dropdown {
             display: block;
             position: absolute;
-            padding: 4em;
             left: -4em;
+            bottom: auto;
+            padding: 4em;
+            width: auto;
             transition: .2s ease-in-out;
             pointer-events: none;
             transform: translateY(-10px);
@@ -693,11 +666,6 @@
             opacity: 1;
             pointer-events: auto;
             transform: translateY(0);
-        }
-
-        &__main-nav-offer:before,
-        &__main-nav-offer:after {
-            display: none;
         }
 
         // RESET
@@ -782,16 +750,25 @@
         transform: translateY(0px);
     }
 
+    &__w100 {
+        position: relative;
+    }
+
     &__title-box {
         position: absolute;
         bottom: 20px;
         left: 10px;
         color: $pure-white;
-        font-weight: 300;
+
+        h2,
+        p {
+            font-weight: 100;
+        }
     }
 
     &__title {
         font-size: 1.6rem;
+        letter-spacing: .2em;
         text-transform: uppercase;
     }
 
@@ -823,10 +800,6 @@
 
             img:hover {
                 filter: brightness(70%);
-            }
-
-            h2 {
-                font-weight: 300;
             }
         }
 
@@ -862,7 +835,6 @@
         }
 
         &__title {
-            font-size: 1.6rem;
             letter-spacing: .3em;
         }
 
@@ -881,7 +853,7 @@
     &__container,
     &__container a,
     &__copyright,
-    &__copyright span {
+    &__copyright .footer__year {
         color: #999;
         text-decoration: none;
         font-size: 1.3rem;
@@ -1021,15 +993,10 @@
 
 // CTA POPUP
 
-// main {
-//     position: relative;
-// }
-
 .CTA {
 
-    &__PopUp {
+    &__popUp {
         position: fixed;
-
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1037,33 +1004,197 @@
         left: 0;
         width: 100%;
         height: 100vh;
-        z-index: 500;
-        opacity: 0;
+        z-index: 100;
         pointer-events: none;
-        transform: translateY(-50px);
-        transition: .3s;
-        background-color: rgba(0, 0, 0, 0.541);
-
-        // background-color: silver;
-        z-index: 1000;
     }
 
-    &__img {
-        display: block;
-        width: calc(1400px - 6em);
+    &__popUp--active {
+        pointer-events: auto;
+    }
+
+    &__shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.65);
+        opacity: 0;
+        transition: opacity .3s;
+    }
+
+    &__shadow--active {
+        opacity: 1;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: relative;
+        max-width: calc(1400px - 6em);
         height: 95vh;
-        background-image: url(../img/Screenshot_2.jpg);
+        margin: 0 3em;
+        background-color: $pure-white;
+        z-index: 100;
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: .3s;
+    }
+
+    &__container--active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    &__closeBtn {
+        position: absolute;
+        top: 0;
+        right: 3em;
+        margin: .8em;
+        padding: 2em;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    &__closeBtn-bar,
+    &__closeBtn-bar::before {
+        position: absolute;
+        height: 2px;
+        background-color: $main-Color;
+        transition: background-color .3s;
+    }
+
+
+    &__closeBtn-bar {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 70%;
+    }
+
+    &__closeBtn-bar::before {
+        content: '';
+        top: 0;
+        left: 0;
+        transform: rotate(90deg);
+        width: 100%;
+    }
+
+    &__closeBtn:hover &__closeBtn-bar,
+    &__closeBtn:hover &__closeBtn-bar::before {
+        background-color: $main-Color__dark;
+    }
+
+
+    &__box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        margin-top: 95px;
+        font-size: 1.2rem;
+    }
+
+    &__box-content {
+        width: 55%;
+        text-align: right;
+        padding: 4em 3em;
+
+    }
+
+    &__box-title {
+        font-size: 3.5rem;
+        font-weight: 400;
+        margin-bottom: 1em;
+    }
+
+    &__box-description {
+        font-size: 1.6rem;
+        line-height: 1.5em;
+
+        p {
+            display: block;
+            margin-left: auto;
+            width: 70%;
+        }
+    }
+
+    &__box-img {
+        position: absolute;
+        right: 0;
+        width: 45%;
+        height: 570px;
+        background-image: url(../img/CTA02.webp);
         background-size: cover;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.281);
-        // background-color: silver;
-        // z-index: 1000;
+        background-position: center;
+    }
+
+    &__content-box {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-content: space-between;
+        flex-wrap: wrap;
+        bottom: 150px;
+        width: 95%;
+        max-width: 750px;
+        height: 100%;
+        max-height: 680px;
+        padding: 4em;
+        background-color: $complementary-Color;
+
+        &-img {
+            width: 220px;
+            height: 220px;
+            background-size: cover;
+
+            &-One {
+                background-image: url(../img/CTA03.webp);
+            }
+
+            &-Two {
+                background-image: url(../img/CTA01.webp);
+                align-self: flex-end;
+            }
+        }
+
+        &-items {
+            width: 55%;
+        }
+    }
+
+    &__items-box {
+        color: $light-white;
+        font-weight: 300;
+        line-height: 1.5em;
+
+        p:nth-child(1) {
+            font-size: 3rem;
+        }
+
+        p:nth-child(2) {
+            margin: .5em 0;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: $main-Color;
+        }
+
+        p:nth-child(3) {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__items-box:first-child {
+        padding-bottom: 1.5em;
     }
 }
 
-.CTA__PopUp--active {
-    // background-color: silver;
-    pointer-events: auto;
-    opacity: 1;
-    transform: translateY(0px);
-    // z-index: 1000;
+.button__popUp {
+    margin-bottom: 3em;
 }
