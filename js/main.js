@@ -1,3 +1,4 @@
+// NAVIGATION
 const navMain = document.querySelector('.nav__main-nav');
 const navBtn = document.querySelector('.nav__burgerBtn');
 const navShadow = document.querySelector('.nav__shadow');
@@ -35,19 +36,6 @@ const handleCurrentYear = () => {
     footerYear.innerText = year
 }
 handleCurrentYear();
-
-
-// DROPPING CONTACT
-const navDropContact = document.querySelector('.nav__droppingContact')
-
-const droppingContactShow = () => {
-    navDropContact.classList.toggle('nav__droppingContact--show', window.scrollY > 700);
-    navDropContact.classList.toggle('nav__droppingContact--hide', window.scrollY > 11500);
-}
-
-window.addEventListener('scroll', droppingContactShow)
-
-
 
 
 // CTA POPUP

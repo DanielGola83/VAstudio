@@ -1,5 +1,6 @@
 @import '../sass/colors';
 @import '../sass/components';
+@import '../sass/contact';
 
 *,
 *::before,
@@ -20,6 +21,27 @@ body {
 }
 
 // HEADER 
+
+.header {
+
+    .section-header__title,
+    .hl_thin,
+    .section-header__pretitle,
+    .section-header__text {
+        animation: headerTitle .8s ease-in .5s forwards;
+        opacity: 0;
+    }
+}
+
+@keyframes headerTitle {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        opacity: 1;
+    }
+}
 
 .header {
     position: relative;
