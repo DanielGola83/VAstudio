@@ -1,0 +1,91 @@
+.header {
+
+    &__img {
+        &--main {
+            background-image: url(../img/header-main.jpg);
+        }
+
+        &--offer {
+            background-image: url(../img/header-oferta.jpg);
+        }
+
+        &--realizations {
+            background-image: url(../img/header-realizacje.jpg);
+        }
+
+        &--cooperation {
+            background-image: url(../img/header-wspolpraca.jpg);
+        }
+
+        &--archviz {
+            background-image: url(../img/header-oferta-wizualizacje-architektury.jpg);
+        }
+
+        &--houseviz {
+            background-image: url(../img/header-ofertawizualizacje-domow.jpg);
+        }
+
+        &--interiorviz {
+            background-image: url(../img/header-oferta-wizualizacje-wnetrz.jpg);
+        }
+
+        &--developer {
+            background-image: url(../img/header-oferta-dla-dewelopera.jpg);
+        }
+
+        &--akso3d {
+            background-image: url(../img/header-oferta-aksonometrie-3d.jpg);
+        }
+
+        &--animations {
+            background-image: url(../img/header-oferta-animacje.jpg);
+        }
+    }
+}
+
+// @media(min-width: 992px) {
+//     .header {
+
+//         &__img {
+//             &--main {
+//                 background-image: url(../img/header-main.jpg);
+//             }
+
+//             &--offer {
+//                 background-image: url(../img/header-oferta.jpg);
+//             }
+
+//             &--realizations {
+//                 background-image: url(../img/header-realizacje.jpg);
+//             }
+
+//             &--cooperation {
+//                 background-image: url(../img/header-wspolpraca.jpg);
+//             }
+
+//             &--archviz {
+//                 background-image: url(../img/header-oferta-wizualizacje-architektury.jpg);
+//             }
+
+//             &--houseviz {
+//                 background-image: url(../img/header-ofertawizualizacje-domow.jpg);
+//             }
+
+//             &--interiorviz {
+//                 background-image: url(../img/header-oferta-wizualizacje-wnetrz.jpg);
+//             }
+
+//             &--developer {
+//                 background-image: url(../img/header-oferta-dla-dewelopera.jpg);
+//             }
+
+//             &--akso3d {
+//                 background-image: url(../img/header-oferta-aksonometrie-3d.jpg);
+//             }
+
+//             &--animations {
+//                 background-image: url(../img/header-oferta-animacje.jpg);
+//             }
+//         }
+//     }
+// }

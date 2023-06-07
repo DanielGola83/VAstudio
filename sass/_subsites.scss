@@ -1,0 +1,288 @@
+// SUBSITE OFFER
+
+.section-offerMain {
+
+    display: flex;
+    padding: 2em;
+
+    &__img {
+        width: 60%;
+        padding: 2em;
+
+        &--left {
+            order: 0;
+        }
+
+        &--right {
+            order: 2;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__container strong {
+        font-weight: 700;
+    }
+
+    &__container {
+        position: relative;
+        width: 40%;
+        padding: 2em;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h3,
+        p {
+            font-weight: 300;
+            line-height: 1.6em;
+        }
+
+        h3 {
+            font-size: 2.6rem;
+        }
+
+        p {
+            font-size: 1.8rem;
+            font-style: italic;
+        }
+    }
+
+    &__line {
+        order: -1;
+        margin: 2em 0;
+        width: 70px;
+        height: 1px;
+        background-color: $main-Color;
+    }
+}
+
+.button-offerMain {
+    margin-left: 0;
+}
+
+
+// SUBSITE REALIZATIONS
+
+.gallery__description {
+
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: .3em .5em;
+    margin-bottom: 1em;
+
+    p {
+        margin-left: 4em;
+        font-size: 1.3rem;
+        letter-spacing: .05em;
+        color: rgb(100, 100, 100);
+
+        span {
+            color: $pure-black;
+        }
+    }
+}
+
+
+// SUBSITE COOPERATION
+
+.section-cooperation {
+
+    &__title,
+    &__description,
+    &__list {
+        width: calc(100% / 3);
+        padding: 3em;
+    }
+
+    &__container {
+        margin-top: 3em;
+    }
+
+    &__box {
+        display: flex;
+        margin-bottom: 3em;
+        border-top: 1px solid $main-Color;
+
+
+        h3,
+        p,
+        li {
+            font-weight: 300;
+            line-height: 1.6em;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+    }
+
+    &__title {
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__title h3 {
+        font-size: 2.6rem;
+        font-weight: 300;
+    }
+
+    &__title h3::before {
+        position: absolute;
+        top: 45%;
+        font-size: 6rem;
+        color: $main-Color;
+        opacity: .5;
+    }
+
+    &__title--One h3::before {
+        content: "1.";
+    }
+
+    &__title--Two h3::before {
+        content: "2.";
+    }
+
+    &__title--Three h3::before {
+        content: "3.";
+    }
+
+    &__title--Four h3::before {
+        content: "4.";
+    }
+
+    &__description p {
+        font-size: 1.8rem;
+        font-style: italic;
+    }
+
+    &__list li {
+        font-size: 1.5rem;
+        margin-bottom: 1em;
+    }
+}
+
+.section-accordion {
+    &__container {
+        width: 90%;
+        max-width: 900px;
+        margin: 3em auto;
+    }
+
+    &__item {
+        border-top: 1px solid $main-Color;
+    }
+
+    &__item:last-child {
+        border-bottom: 1px solid $main-Color;
+    }
+
+    &__header {
+        position: relative;
+        padding: 2em 0;
+        text-align: center;
+        cursor: pointer;
+
+        h3 {
+            font-weight: 400;
+            font-size: 2.4rem;
+        }
+    }
+
+    &__body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+
+    &__content {
+        margin-bottom: 3em;
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 300;
+        line-height: 1.6em;
+
+        ul {
+            text-align: left;
+            margin: 3em 2em 0;
+
+            li {
+                margin-top: 1em;
+            }
+        }
+    }
+}
+
+// SUBSITE CONTACT
+
+.section-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100vh;
+    background-color: $complementary-Color;
+
+    .section-header {
+
+        &__title,
+        &__text {
+            color: $light-white;
+        }
+    }
+
+    .hl_thin::after,
+    .hl_thick::after {
+        background-color: $main-Color;
+    }
+
+    &__container {
+        padding: 1em;
+        text-align: center;
+        color: $light-white;
+    }
+
+    &__box {
+        padding-bottom: 2em;
+
+        p {
+            font-size: 1.8rem;
+            font-weight: 300;
+        }
+    }
+
+    &__mail,
+    &__phone {
+        padding: 1em 0;
+
+        a {
+            color: $main-Color;
+            transition: color .2s;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: $main-Color__dark;
+        }
+    }
+}
+
+@media(min-width: 768px) {
+
+    .section-contact {
+        height: 60vh;
+
+        &__container {
+            padding: 3em 1em 1em;
+        }
+
+        &__box {
+            p {
+                font-size: 2rem;
+            }
+        }
+    }
+}

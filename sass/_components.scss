@@ -26,7 +26,6 @@
         border: none;
         cursor: pointer;
         filter: invert(1);
-
     }
 
     &__logo-box:hover {
@@ -76,7 +75,7 @@
     &__title,
     &__pretitle,
     &__text {
-        max-width: 1100px;
+        max-width: 800px;
         text-align: center;
     }
 
@@ -716,7 +715,9 @@
         transform: translateY(0px);
     }
 
-    &__w100 {
+    &__w100,
+    &__w66,
+    &__w33 {
         position: relative;
     }
 
@@ -726,7 +727,7 @@
         left: 10px;
         color: $pure-white;
 
-        h2,
+        h3,
         p {
             font-weight: 100;
         }
@@ -806,6 +807,82 @@
 
         &__caption {
             font-size: 6rem;
+        }
+    }
+}
+
+// SECTION COOPERATION CONTACT
+
+.section-cooperationContact {
+
+    background-color: $complementary-Color;
+
+    .section-header {
+
+        &__title,
+        &__text {
+            color: $light-white;
+        }
+
+        &__pretitle {
+            color: $main-Color;
+        }
+    }
+
+    .hl_thin::after,
+    .hl_thick::after {
+        background-color: $main-Color;
+    }
+
+    &__container {
+        padding: 1em;
+        text-align: center;
+        // font-size: 1.4rem;
+        color: $light-white;
+    }
+
+    &__box {
+        padding-bottom: 2em;
+
+        p {
+            font-size: 1.8rem;
+            font-weight: 300;
+        }
+    }
+
+    &__mail,
+    &__phone {
+        padding: 1em 0;
+
+        a {
+            color: $main-Color;
+            transition: color .2s;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: $main-Color__dark;
+        }
+    }
+}
+
+@media(min-width: 768px) {
+
+    .section-cooperationContact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        height: 60vh;
+
+        &__container {
+            padding: 3em 1em 1em;
+        }
+
+        &__box {
+            p {
+                font-size: 2rem;
+            }
         }
     }
 }
@@ -896,14 +973,13 @@
 
 @media(min-width: 768px) {
     .footer {
+        position: sticky;
+        height: 50vh;
 
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
 
-        height: 40vh;
-
-        position: sticky;
         bottom: 0;
         background: linear-gradient(0deg, rgb(0, 0, 0) 0%, #202020 100%);
 
@@ -944,6 +1020,8 @@
 
 @media(min-width: 992px) {
     .footer {
+        height: 40vh;
+
         &__box {
             width: auto;
         }
@@ -956,6 +1034,11 @@
         }
     }
 }
+
+@media(min-width: 1200px) {
+    .footer {}
+}
+
 
 // CTA POPUP
 
@@ -970,7 +1053,7 @@
         left: 0;
         width: 100%;
         height: 100vh;
-        z-index: 100;
+        z-index: 1000;
         pointer-events: none;
     }
 
@@ -1066,16 +1149,16 @@
     }
 
     &__box-title {
-        font-size: 4rem;
-        font-weight: 400;
+        font-size: 2.6rem;
+        font-weight: 300;
     }
 
     &__box-description {
-        font-size: 2rem;
-        font-style: italic;
-        line-height: 1.3em;
-        width: 70%;
         margin: 0 auto;
+        font-size: 1.8rem;
+        font-weight: 300;
+        font-style: italic;
+        line-height: 1.6em;
     }
 
     &__box-img {
@@ -1086,10 +1169,6 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        // justify-content: space-between;
-        // align-items:;
-        // align-content: space-between;
-        // flex-wrap: wrap;
         width: 95%;
         max-width: 1100px;
         padding: 2em 4em;
@@ -1111,23 +1190,22 @@
 
     &__items-box {
         width: 45%;
-        color: $light-white;
+        font-size: 1.6rem;
         font-weight: 300;
-        line-height: 1.5em;
+        line-height: 1.6em;
+        color: $light-white;
 
         p:nth-child(1) {
-            font-size: 3rem;
+            font-size: 2.6rem;
         }
 
         p:nth-child(2) {
             margin: .5em 0;
-            font-size: 1.6rem;
-            font-weight: 500;
             color: $main-Color;
         }
 
         p:nth-child(3) {
-            font-size: 1.4rem;
+            font-style: italic;
         }
     }
 }
@@ -1167,29 +1245,18 @@
 
         &__box-content {
             width: 55%;
-            text-align: right;
+            text-align: left;
             padding: 2em 3em;
 
             .hl_thin::after,
             .hl_thick::after {
                 content: '';
                 position: absolute;
-                left: 100%;
-                right: 0;
-                transform: translate(-100%);
+                left: 0;
+                width: 70px;
+                transform: translate(0);
                 background-color: $main-Color;
             }
-        }
-
-        &__box-title {
-            font-size: 3.3rem;
-        }
-
-        &__box-description {
-            width: 70%;
-            margin-right: 0;
-            font-size: 1.6rem;
-            line-height: 1.6em;
         }
 
         &__box-img {
