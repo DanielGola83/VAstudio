@@ -1062,8 +1062,8 @@ a:hover .gallery__figcaption {
   .header__img--realizations {
     background-image: url(../img/header-realizacje.jpg);
   }
-  .header__img--cooperation {
-    background-image: url(../img/header-wspolpraca.webp);
+  .header__img--xxx {
+    background-image: url(../img/header-wspolpraca-mobile.webp);
   }
   .header__img--RlsArchviz {
     background-image: url(../img/realizacje-header-architektura.jpg);
