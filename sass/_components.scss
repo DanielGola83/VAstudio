@@ -683,6 +683,18 @@
 
 .gallery {
 
+    &__container2 {
+        position: relative;
+
+        img {
+            padding: 2px;
+            width: 100%;
+        }
+    }
+}
+
+.gallery {
+
     &__container {
         position: relative;
 
@@ -734,13 +746,13 @@
     }
 
     &__title {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         letter-spacing: .2em;
         text-transform: uppercase;
     }
 
     &__caption {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 }
 
@@ -806,7 +818,7 @@
         }
 
         &__caption {
-            font-size: 6rem;
+            font-size: 4.5rem;
         }
     }
 }
@@ -837,7 +849,6 @@
     &__container {
         padding: 1em;
         text-align: center;
-        // font-size: 1.4rem;
         color: $light-white;
     }
 
@@ -866,8 +877,7 @@
     }
 }
 
-@media(min-width: 768px) {
-
+@media(min-width: 1200px) {
     .section-cooperationContact {
         display: flex;
         flex-direction: column;
@@ -974,12 +984,9 @@
 @media(min-width: 768px) {
     .footer {
         position: sticky;
-        height: 50vh;
-
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-
         bottom: 0;
         background: linear-gradient(0deg, rgb(0, 0, 0) 0%, #202020 100%);
 
@@ -1020,7 +1027,6 @@
 
 @media(min-width: 992px) {
     .footer {
-        height: 40vh;
 
         &__box {
             width: auto;
@@ -1036,9 +1042,10 @@
 }
 
 @media(min-width: 1200px) {
-    .footer {}
+    .footer {
+        height: 40vh;
+    }
 }
-
 
 // CTA POPUP
 
@@ -1265,7 +1272,7 @@
             right: 0;
             width: 45%;
             height: 570px;
-            background-image: url(../img/CTA02.webp);
+            background-image: url(../img/cta02.webp);
             background-size: cover;
             background-position: center;
         }
@@ -1291,11 +1298,11 @@
                 background-size: cover;
 
                 &-One {
-                    background-image: url(../img/CTA03.webp);
+                    background-image: url(../img/cta03.webp);
                 }
 
                 &-Two {
-                    background-image: url(../img/CTA01.webp);
+                    background-image: url(../img/cta01.webp);
                     align-self: flex-end;
                 }
             }

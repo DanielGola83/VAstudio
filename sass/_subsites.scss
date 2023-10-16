@@ -2,20 +2,14 @@
 
 .section-offerMain {
 
-    display: flex;
-    padding: 2em;
+    margin: 2em 0;
+
+    &__BgColor {
+        background-color: rgb(245, 245, 245);
+    }
 
     &__img {
-        width: 60%;
         padding: 2em;
-
-        &--left {
-            order: 0;
-        }
-
-        &--right {
-            order: 2;
-        }
 
         img {
             width: 100%;
@@ -27,17 +21,14 @@
     }
 
     &__container {
-        position: relative;
-        width: 40%;
-        padding: 2em;
-
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        align-items: center;
+        padding: 2em;
+        text-align: left;
 
         h3,
         p {
-            font-weight: 300;
             line-height: 1.6em;
         }
 
@@ -53,67 +44,165 @@
 
     &__line {
         order: -1;
-        margin: 2em 0;
+        margin: 2em auto;
         width: 70px;
         height: 1px;
         background-color: $main-Color;
     }
-}
 
-.button-offerMain {
-    margin-left: 0;
-}
+    &__features {
+        margin: 6em 0 2em;
 
+        h4 {
+            font-size: 1.8rem;
+        }
 
-// SUBSITE REALIZATIONS
+        p {
+            font-style: normal;
+            font-size: 1.6rem;
+        }
 
-.gallery__description {
-
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    padding: .3em .5em;
-    margin-bottom: 1em;
-
-    p {
-        margin-left: 4em;
-        font-size: 1.3rem;
-        letter-spacing: .05em;
-        color: rgb(100, 100, 100);
-
-        span {
-            color: $pure-black;
+        &--title {
+            letter-spacing: .1rem;
+            margin-top: 2em;
+            color: $main-Color;
+            font-weight: 700;
         }
     }
 }
 
+.button-offerMain {
+    margin: 2em 0 0;
+}
+
+@media(min-width: 768px) {
+    .section-offerMain {
+
+        display: flex;
+        margin: 3em 0;
+        padding: 2em;
+
+        &__img {
+            width: 40%;
+            padding: 1em;
+
+            &--left {
+                order: 0;
+            }
+
+            &--right {
+                order: 2;
+            }
+        }
+
+        &__container {
+            position: relative;
+            align-items: flex-start;
+            width: 60%;
+            padding: 1em;
+            text-align: left;
+        }
+
+        &__line {
+            margin: 2em 0;
+        }
+    }
+}
+
+@media(min-width: 992px) {
+    .section-offerMain {
+
+        &__img {
+            padding: 2em;
+        }
+
+        &__container {
+            justify-content: space-between;
+            padding: 2em;
+        }
+    }
+}
+
+@media(min-width: 1200px) {
+    .section-offerMain {
+
+        &__img {
+            width: 60%;
+        }
+
+        &__container {
+            width: 40%;
+        }
+    }
+}
+
+// SUBSITE REALIZATIONS
+
+.section-realizations {
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1em;
+
+        p {
+            font-size: 1.3rem;
+            letter-spacing: .05em;
+            color: rgb(100, 100, 100);
+
+            span {
+                color: $pure-black;
+            }
+        }
+    }
+
+    &__item {
+        margin: 0.5em;
+    }
+
+    &__item p:first-child {
+        margin-bottom: .5em;
+    }
+
+    &__One,
+    &__Two {
+        width: 45%;
+    }
+
+    &__Three {
+        width: 10%;
+    }
+}
+
+@media(min-width: 768px) {
+    .section-realizations {
+        &__container {
+            width: 70%;
+            margin-left: auto;
+        }
+    }
+}
+
+@media(min-width: 1200px) {
+    .section-realizations {
+        &__container {
+            width: 45%;
+        }
+    }
+}
 
 // SUBSITE COOPERATION
 
 .section-cooperation {
 
-    &__title,
-    &__description,
-    &__list {
-        width: calc(100% / 3);
-        padding: 3em;
-    }
-
-    &__container {
-        margin-top: 3em;
-    }
-
     &__box {
-        display: flex;
-        margin-bottom: 3em;
-        border-top: 1px solid $main-Color;
-
+        padding: 4em 1.5em;
 
         h3,
         p,
         li {
             font-weight: 300;
-            line-height: 1.6em;
+            line-height: 1.4em;
         }
 
         strong {
@@ -123,7 +212,6 @@
 
     &__title {
         position: relative;
-        overflow: hidden;
     }
 
     &__title h3 {
@@ -133,36 +221,45 @@
 
     &__title h3::before {
         position: absolute;
-        top: 45%;
-        font-size: 6rem;
+        top: -150%;
+        font-size: 5rem;
+        font-weight: 700;
         color: $main-Color;
         opacity: .5;
     }
 
     &__title--One h3::before {
-        content: "1.";
+        content: "1";
     }
 
     &__title--Two h3::before {
-        content: "2.";
+        content: "2";
     }
 
     &__title--Three h3::before {
-        content: "3.";
+        content: "3";
     }
 
     &__title--Four h3::before {
-        content: "4.";
+        content: "4";
     }
 
     &__description p {
-        font-size: 1.8rem;
+        font-size: 2rem;
         font-style: italic;
+        padding-bottom: 2em;
     }
 
-    &__list li {
-        font-size: 1.5rem;
-        margin-bottom: 1em;
+    &__list {
+        li {
+            font-size: 1.6rem;
+            margin-bottom: 1em;
+            font-weight: 400;
+        }
+
+        ul {
+            margin-left: 1.5em;
+        }
     }
 }
 
@@ -184,12 +281,11 @@
     &__header {
         position: relative;
         padding: 2em 0;
-        text-align: center;
-        cursor: pointer;
+        text-align: left;
 
         h3 {
             font-weight: 400;
-            font-size: 2.4rem;
+            font-size: 2.2rem;
         }
     }
 
@@ -201,9 +297,9 @@
 
     &__content {
         margin-bottom: 3em;
-        text-align: center;
-        font-size: 1.8rem;
-        font-weight: 300;
+        text-align: left;
+        font-size: 1.6rem;
+        font-weight: 400;
         line-height: 1.6em;
 
         ul {
@@ -217,13 +313,158 @@
     }
 }
 
+@media(min-width: 768px) {
+    .section-cooperation {
+
+        &__box {
+            padding: 5em 2em;
+
+            h3,
+            p,
+            li {
+                line-height: 1.5em;
+            }
+        }
+
+        &__title h3::before {
+            top: -150%;
+            font-size: 6rem;
+        }
+
+        &__description p {
+            font-size: 2.4rem;
+        }
+
+        &__list {
+            li {
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    .section-accordion {
+        &__header {
+            h3 {
+                font-size: 2.4rem;
+            }
+        }
+
+        &__content {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+@media(min-width: 992px) {
+    .section-cooperation {
+
+        &__title,
+        &__description,
+        &__list {
+            width: calc(100% / 3);
+            padding: 3em;
+        }
+
+        &__container {
+            margin-top: 3em;
+        }
+
+        &__box {
+            display: flex;
+            margin-bottom: 3em;
+            padding: 0;
+            border-top: 1px solid $main-Color;
+
+            h3,
+            p,
+            li {
+                line-height: 1.6em;
+            }
+
+            .section-action__line {
+                display: none;
+            }
+        }
+
+        &__title h3::before {
+            top: 48%;
+            font-weight: 500;
+            font-size: 11rem;
+        }
+
+        &__title h3::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 18%;
+            width: 100px;
+            height: 100px;
+            background-image: url(../img/icons/icons-cooperation.webp);
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+
+        &__title--One h3::after {
+            background-position: 0px;
+        }
+
+        &__title--Two h3::after {
+            background-position: -100px;
+        }
+
+        &__title--Three h3::after {
+            background-position: -200px;
+        }
+
+        &__title--Four h3::after {
+            background-position: -300px;
+        }
+
+
+        &__description p {
+            font-size: 1.8rem;
+            padding-bottom: 0;
+        }
+
+        &__list {
+            li {
+                font-size: 1.5rem;
+                list-style: disc;
+            }
+
+            ul {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .section-accordion {
+
+        &__header {
+            text-align: center;
+            cursor: pointer;
+
+            h3 {
+                font-size: 2.4rem;
+            }
+        }
+
+        &__content {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 300;
+        }
+    }
+
+}
+
+
 // SUBSITE CONTACT
 
 .section-contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 100vh;
+
+    padding: 6em 0;
     background-color: $complementary-Color;
 
     .section-header {
@@ -260,12 +501,7 @@
 
         a {
             color: $main-Color;
-            transition: color .2s;
             text-decoration: none;
-        }
-
-        a:hover {
-            color: $main-Color__dark;
         }
     }
 }
@@ -273,16 +509,29 @@
 @media(min-width: 768px) {
 
     .section-contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        padding: 15em 3em;
+        height: 100vh;
+    }
+}
+
+@media(min-width: 992px) {
+
+    .section-contact {
+        padding: 20em 3em;
+        height: 100vh;
+    }
+}
+
+@media(min-width: 1200px) {
+
+    .section-contact {
+        justify-content: flex-end;
+
+        padding: 0;
         height: 60vh;
-
-        &__container {
-            padding: 3em 1em 1em;
-        }
-
-        &__box {
-            p {
-                font-size: 2rem;
-            }
-        }
     }
 }

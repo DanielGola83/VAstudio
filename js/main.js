@@ -69,6 +69,7 @@ const accordionItemHeader = document.querySelectorAll(".section-accordion__heade
 accordionItemHeader.forEach(accordionItemHeader => {
     accordionItemHeader.addEventListener("click", event => {
 
+        // AKORDEON NIE ZAMYKA SIĘ AUTOMATYCZNIE
         // const currentlyActiveAccordionItemHeader = document.querySelector(".section-accordion__header.active");
         // if(currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader!==accordionItemHeader) {
         //     currentlyActiveAccordionItemHeader.classList.toggle("active");

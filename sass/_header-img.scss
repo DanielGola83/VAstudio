@@ -1,91 +1,101 @@
 .header {
 
     &__img {
+
+        // MAIN PAGE
+
         &--main {
-            background-image: url(../img/header-main.jpg);
+            background-image: url(../img/header-main-mobile.webp);
         }
 
         &--offer {
-            background-image: url(../img/header-oferta.jpg);
+            background-image: url(../img/header-oferta-mobile.webp);
         }
 
         &--realizations {
-            background-image: url(../img/header-realizacje.jpg);
+            background-image: url(../img/header-realizacje-mobile.jpg);
         }
 
         &--cooperation {
-            background-image: url(../img/header-wspolpraca.jpg);
+            background-image: url(../img/header-wspolpraca-mobile.webp);
         }
 
-        &--archviz {
-            background-image: url(../img/header-oferta-wizualizacje-architektury.jpg);
+
+        // REALIZATIONS
+
+        &--RlsArchviz {
+            background-image: url(../img/realizacje-header-architektura-mobile.jpg);
         }
 
-        &--houseviz {
-            background-image: url(../img/header-ofertawizualizacje-domow.jpg);
+        &--RlsHouseviz {
+            background-image: url(../img/realizacje-header-domy-mobile.jpg);
         }
 
-        &--interiorviz {
-            background-image: url(../img/header-oferta-wizualizacje-wnetrz.jpg);
+        &--RlsInteriorviz {
+            background-image: url(../img/realizacje-header-wnetrza-mobile.jpg);
         }
 
-        &--developer {
-            background-image: url(../img/header-oferta-dla-dewelopera.jpg);
+        &--RlsDeveloper {
+            background-image: url(../img/realizacje-header-deweloper-mobile.jpg);
         }
 
-        &--akso3d {
-            background-image: url(../img/header-oferta-aksonometrie-3d.jpg);
+        &--RlsAkso3d {
+            background-image: url(../img/realizacje-header-aksonometria-mobile.jpg);
         }
 
-        &--animations {
-            background-image: url(../img/header-oferta-animacje.jpg);
+        &--RlsAnimations {
+            background-image: url(../img/realizacje-header-animacje-mobile.jpg);
         }
     }
 }
 
-// @media(min-width: 992px) {
-//     .header {
+@media(min-width: 720px) {
+    .header {
+        &__img {
 
-//         &__img {
-//             &--main {
-//                 background-image: url(../img/header-main.jpg);
-//             }
+            // MAIN PAGE
 
-//             &--offer {
-//                 background-image: url(../img/header-oferta.jpg);
-//             }
+            &--main {
+                background-image: url(../img/header-main.webp);
+            }
 
-//             &--realizations {
-//                 background-image: url(../img/header-realizacje.jpg);
-//             }
+            &--offer {
+                background-image: url(../img/header-oferta.webp);
+            }
 
-//             &--cooperation {
-//                 background-image: url(../img/header-wspolpraca.jpg);
-//             }
+            &--realizations {
+                background-image: url(../img/header-realizacje.jpg);
+            }
 
-//             &--archviz {
-//                 background-image: url(../img/header-oferta-wizualizacje-architektury.jpg);
-//             }
+            &--cooperation {
+                background-image: url(../img/header-wspolpraca.webp);
+            }
 
-//             &--houseviz {
-//                 background-image: url(../img/header-ofertawizualizacje-domow.jpg);
-//             }
+            // REALIZATIONS
 
-//             &--interiorviz {
-//                 background-image: url(../img/header-oferta-wizualizacje-wnetrz.jpg);
-//             }
-
-//             &--developer {
-//                 background-image: url(../img/header-oferta-dla-dewelopera.jpg);
-//             }
-
-//             &--akso3d {
-//                 background-image: url(../img/header-oferta-aksonometrie-3d.jpg);
-//             }
-
-//             &--animations {
-//                 background-image: url(../img/header-oferta-animacje.jpg);
-//             }
-//         }
-//     }
-// }
+            &--RlsArchviz {
+                background-image: url(../img/realizacje-header-architektura.jpg);
+            }
+    
+            &--RlsHouseviz {
+                background-image: url(../img/realizacje-header-domy.jpg);
+            }
+    
+            &--RlsInteriorviz {
+                background-image: url(../img/realizacje-header-wnetrza.jpg);
+            }
+    
+            &--RlsDeveloper {
+                background-image: url(../img/realizacje-header-deweloper.jpg);
+            }
+    
+            &--RlsAkso3d {
+                background-image: url(../img/realizacje-header-aksonometria.jpg);
+            }
+    
+            &--RlsAnimations {
+                background-image: url(../img/realizacje-header-animacje.jpg);
+            }
+        }
+    }
+}
