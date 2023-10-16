@@ -1027,29 +1027,8 @@ a:hover .gallery__figcaption {
 .header__img--offer {
   background-image: url(../img/header-oferta-mobile.webp);
 }
-.header__img--realizations {
-  background-image: url(../img/header-realizacje-mobile.jpg);
-}
 .header__img--cooperation {
   background-image: url(../img/header-wspolpraca-mobile.webp);
-}
-.header__img--RlsArchviz {
-  background-image: url(../img/realizacje-header-architektura-mobile.jpg);
-}
-.header__img--RlsHouseviz {
-  background-image: url(../img/realizacje-header-domy-mobile.jpg);
-}
-.header__img--RlsInteriorviz {
-  background-image: url(../img/realizacje-header-wnetrza-mobile.jpg);
-}
-.header__img--RlsDeveloper {
-  background-image: url(../img/realizacje-header-deweloper-mobile.jpg);
-}
-.header__img--RlsAkso3d {
-  background-image: url(../img/realizacje-header-aksonometria-mobile.jpg);
-}
-.header__img--RlsAnimations {
-  background-image: url(../img/realizacje-header-animacje-mobile.jpg);
 }
 
 @media (min-width: 720px) {
@@ -1059,29 +1038,8 @@ a:hover .gallery__figcaption {
   .header__img--offer {
     background-image: url(../img/header-oferta.webp);
   }
-  .header__img--realizations {
-    background-image: url(../img/header-realizacje.jpg);
-  }
-  .header__img--xxx {
-    background-image: url(../img/header-wspolpraca-mobile.webp);
-  }
-  .header__img--RlsArchviz {
-    background-image: url(../img/realizacje-header-architektura.jpg);
-  }
-  .header__img--RlsHouseviz {
-    background-image: url(../img/realizacje-header-domy.jpg);
-  }
-  .header__img--RlsInteriorviz {
-    background-image: url(../img/realizacje-header-wnetrza.jpg);
-  }
-  .header__img--RlsDeveloper {
-    background-image: url(../img/realizacje-header-deweloper.jpg);
-  }
-  .header__img--RlsAkso3d {
-    background-image: url(../img/realizacje-header-aksonometria.jpg);
-  }
-  .header__img--RlsAnimations {
-    background-image: url(../img/realizacje-header-animacje.jpg);
+  .header__img--cooperation {
+    background-image: url(../img/header-wspolpraca.webp);
   }
 }
 .section-offerMain {

@@ -12,39 +12,8 @@
             background-image: url(../img/header-oferta-mobile.webp);
         }
 
-        &--realizations {
-            background-image: url(../img/header-realizacje-mobile.jpg);
-        }
-
         &--cooperation {
             background-image: url(../img/header-wspolpraca-mobile.webp);
-        }
-
-
-        // REALIZATIONS
-
-        &--RlsArchviz {
-            background-image: url(../img/realizacje-header-architektura-mobile.jpg);
-        }
-
-        &--RlsHouseviz {
-            background-image: url(../img/realizacje-header-domy-mobile.jpg);
-        }
-
-        &--RlsInteriorviz {
-            background-image: url(../img/realizacje-header-wnetrza-mobile.jpg);
-        }
-
-        &--RlsDeveloper {
-            background-image: url(../img/realizacje-header-deweloper-mobile.jpg);
-        }
-
-        &--RlsAkso3d {
-            background-image: url(../img/realizacje-header-aksonometria-mobile.jpg);
-        }
-
-        &--RlsAnimations {
-            background-image: url(../img/realizacje-header-animacje-mobile.jpg);
         }
     }
 }
@@ -63,38 +32,8 @@
                 background-image: url(../img/header-oferta.webp);
             }
 
-            &--realizations {
-                background-image: url(../img/header-realizacje.jpg);
-            }
-
-            &--xxx {
-                background-image: url(../img/header-wspolpraca-mobile.webp);
-            }
-
-            // REALIZATIONS
-
-            &--RlsArchviz {
-                background-image: url(../img/realizacje-header-architektura.jpg);
-            }
-    
-            &--RlsHouseviz {
-                background-image: url(../img/realizacje-header-domy.jpg);
-            }
-    
-            &--RlsInteriorviz {
-                background-image: url(../img/realizacje-header-wnetrza.jpg);
-            }
-    
-            &--RlsDeveloper {
-                background-image: url(../img/realizacje-header-deweloper.jpg);
-            }
-    
-            &--RlsAkso3d {
-                background-image: url(../img/realizacje-header-aksonometria.jpg);
-            }
-    
-            &--RlsAnimations {
-                background-image: url(../img/realizacje-header-animacje.jpg);
+            &--cooperation {
+                background-image: url(../img/header-wspolpraca.webp);
             }
         }
     }
