@@ -683,12 +683,12 @@
 
 .gallery {
 
-    &__container2 {
+    &__containerFullImage {
         position: relative;
 
-        img {
-            padding: 1.2em;
-            width: 100%;
+        .gallery__title-box {
+            position: absolute;
+            left: calc( 1.2em + 10px);
         }
     }
 }
@@ -705,6 +705,10 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
+        }
+
+        img {
+            padding-top: 1.2em;
         }
     }
 
@@ -732,7 +736,6 @@
     &__w66,
     &__w33 {
         position: relative;
-        padding: 1.2em;
     }
 
     &__title-box {
@@ -773,7 +776,7 @@
             justify-content: flex-start;
             align-items: flex-start;
             flex-wrap: wrap;
-            padding: 2px;
+            padding: 0;
 
             a {
                 margin: .15em;
@@ -782,6 +785,7 @@
             img {
                 width: 100%;
                 height: 100%;
+                padding-top: 0;
                 object-fit: cover;
                 transition: filter .3s;
             }
@@ -796,7 +800,6 @@
         &__w66 {
             height: 45vw;
             max-height: 600px;
-            padding: 0;
         }
 
         &__w100 {
