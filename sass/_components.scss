@@ -687,7 +687,7 @@
         position: relative;
 
         img {
-            padding: 2px;
+            padding: 1.2em;
             width: 100%;
         }
     }
@@ -697,6 +697,7 @@
 
     &__container {
         position: relative;
+        padding: 0 1.2em;
 
         figure,
         img {
@@ -731,6 +732,7 @@
     &__w66,
     &__w33 {
         position: relative;
+        padding: 1.2em;
     }
 
     &__title-box {
@@ -759,12 +761,19 @@
 @media(min-width: 768px) {
 
     .gallery {
+        &__container2 {
+            img {
+                padding: 2px;
+            }
+        }
+
         &__container {
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
             align-items: flex-start;
             flex-wrap: wrap;
+            padding: 2px;
 
             a {
                 margin: .15em;
@@ -787,6 +796,7 @@
         &__w66 {
             height: 45vw;
             max-height: 600px;
+            padding: 0;
         }
 
         &__w100 {

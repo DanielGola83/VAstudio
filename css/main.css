@@ -523,12 +523,13 @@
   position: relative;
 }
 .gallery__container2 img {
-  padding: 2px;
+  padding: 1.2em;
   width: 100%;
 }
 
 .gallery__container {
   position: relative;
+  padding: 0 1.2em;
 }
 .gallery__container figure,
 .gallery__container img {
@@ -557,6 +558,7 @@ a:hover .gallery__figcaption {
 }
 .gallery__w100, .gallery__w66, .gallery__w33 {
   position: relative;
+  padding: 1.2em;
 }
 .gallery__title-box {
   position: absolute;
@@ -578,12 +580,16 @@ a:hover .gallery__figcaption {
 }
 
 @media (min-width: 768px) {
+  .gallery__container2 img {
+    padding: 2px;
+  }
   .gallery__container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
+    padding: 2px;
   }
   .gallery__container a {
     margin: 0.15em;
@@ -601,6 +607,7 @@ a:hover .gallery__figcaption {
   .gallery__w100, .gallery__w33, .gallery__w66 {
     height: 45vw;
     max-height: 600px;
+    padding: 0;
   }
   .gallery__w100 {
     position: relative;
