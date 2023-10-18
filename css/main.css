@@ -521,56 +521,66 @@
 }
 .gallery__containerFullImage {
   position: relative;
+  margin: 1.2em;
 }
 .gallery__containerFullImage img {
-  padding: 2px;
   width: 100%;
   height: 100%;
+  margin: 0.6em 0;
 }
 
 .gallery__container {
   position: relative;
+  margin: 0 1.2em;
 }
-.gallery__container picture,
 .gallery__container img {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  margin: 0.6em 0;
 }
 .gallery__figcaption {
   display: none;
 }
 .gallery__w100, .gallery__w66, .gallery__w33, .gallery__w33half {
+  display: block;
   position: relative;
   overflow: hidden;
 }
 .gallery__title-box {
   position: absolute;
-  bottom: 20px;
+  bottom: 30px;
   left: 10px;
   color: #fff;
+  z-index: 100;
 }
 .gallery__title-box h3,
 .gallery__title-box p {
   font-weight: 100;
 }
 .gallery__title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 .gallery__caption {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 @media (min-width: 768px) {
+  .gallery__containerFullImage {
+    margin: 2px;
+  }
+  .gallery img {
+    margin: 0;
+  }
   .gallery__container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
+    margin: 0;
   }
   .gallery__container a {
     margin: 0.15em;
@@ -578,6 +588,7 @@
   .gallery__container img {
     width: 100%;
     height: 100%;
+    margin: 0;
     -o-object-fit: cover;
        object-fit: cover;
     transition: filter 0.3s;
@@ -627,6 +638,7 @@
     left: 30px;
   }
   .gallery__title {
+    font-size: 1.4rem;
     letter-spacing: 0.3em;
   }
   .gallery__caption {

@@ -685,11 +685,12 @@
 
     &__containerFullImage {
         position: relative;
+        margin: 1.2em;
 
         img {
-            padding: 2px;
             width: 100%;
             height: 100%;
+            margin: .6em 0;
         }
     }
 }
@@ -698,13 +699,14 @@
 
     &__container {
         position: relative;
+        margin: 0 1.2em;
 
-        picture,
+
         img {
             position: relative;
             width: 100%;
             height: 100%;
-            overflow: hidden;
+            margin: .6em 0;
         }
     }
 
@@ -716,15 +718,17 @@
     &__w66,
     &__w33,
     &__w33half {
+        display: block;
         position: relative;
         overflow: hidden;
     }
 
     &__title-box {
         position: absolute;
-        bottom: 20px;
+        bottom: 30px;
         left: 10px;
         color: $pure-white;
+        z-index: 100;
 
         h3,
         p {
@@ -733,25 +737,38 @@
     }
 
     &__title {
-        font-size: 1.2rem;
+        font-size: 1rem;
         letter-spacing: .2em;
         text-transform: uppercase;
     }
 
     &__caption {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 }
 
 @media(min-width: 768px) {
 
     .gallery {
+
+        &__containerFullImage {
+            margin: 2px;
+        }
+
+        img {
+            margin: 0;
+        }
+    }
+
+    .gallery {
+
         &__container {
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
             align-items: flex-start;
             flex-wrap: wrap;
+            margin: 0;
 
             a {
                 margin: .15em;
@@ -760,6 +777,7 @@
             img {
                 width: 100%;
                 height: 100%;
+                margin: 0;
                 object-fit: cover;
                 transition: filter .3s;
             }
@@ -821,6 +839,7 @@
         }
 
         &__title {
+            font-size: 1.4rem;
             letter-spacing: .3em;
         }
 
@@ -829,150 +848,6 @@
         }
     }
 }
-
-// // GALLERY KOPIA
-
-// .gallery {
-
-//     &__container2 {
-//         position: relative;
-
-//         img {
-//             padding: 2px;
-//             width: 100%;
-//         }
-//     }
-// }
-
-// .gallery {
-
-//     &__container {
-//         position: relative;
-
-//         figure,
-//         img {
-//             position: relative;
-//             width: 100%;
-//             height: 100%;
-//             overflow: hidden;
-//         }
-//     }
-
-//     &__figcaption {
-//         position: absolute;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         bottom: 0;
-//         width: 100%;
-//         height: 40px;
-//         font-size: 1.4rem;
-//         font-weight: 300;
-//         color: $pure-white;
-//         background-color: $complementary-Color;
-//         transform: translateY(40px);
-//         transition: transform .3s cubic-bezier(0, .76, .64, 1.01);
-//     }
-
-//     a:hover &__figcaption {
-//         transform: translateY(0px);
-//     }
-
-//     &__w100,
-//     &__w66,
-//     &__w33 {
-//         position: relative;
-//     }
-
-//     &__title-box {
-//         position: absolute;
-//         bottom: 20px;
-//         left: 10px;
-//         color: $pure-white;
-
-//         h3,
-//         p {
-//             font-weight: 100;
-//         }
-//     }
-
-//     &__title {
-//         font-size: 1.2rem;
-//         letter-spacing: .2em;
-//         text-transform: uppercase;
-//     }
-
-//     &__caption {
-//         font-size: 3rem;
-//     }
-// }
-
-// @media(min-width: 768px) {
-
-//     .gallery {
-//         &__container {
-//             display: flex;
-//             flex-direction: row;
-//             justify-content: flex-start;
-//             align-items: flex-start;
-//             flex-wrap: wrap;
-
-//             a {
-//                 margin: .15em;
-//             }
-
-//             img {
-//                 width: 100%;
-//                 height: 100%;
-//                 object-fit: cover;
-//                 transition: filter .3s;
-//             }
-
-//             img:hover {
-//                 filter: brightness(70%);
-//             }
-//         }
-
-//         &__w100,
-//         &__w33,
-//         &__w66 {
-//             height: 45vw;
-//             max-height: 600px;
-//         }
-
-//         &__w100 {
-//             position: relative;
-//             width: 100%;
-//         }
-
-//         &__w33 {
-//             width: calc((100% / 3) - .3em);
-//         }
-
-//         &__w33half {
-//             width: calc((100% / 3) - .3em);
-//             height: 22.5vw;
-//             max-height: 300px;
-//         }
-
-//         &__w66 {
-//             width: calc((100% / 3) * 2 - .3em);
-//         }
-
-//         &__title-box {
-//             bottom: 30px;
-//             left: 30px;
-//         }
-
-//         &__title {
-//             letter-spacing: .3em;
-//         }
-
-//         &__caption {
-//             font-size: 4.5rem;
-//         }
-//     }
-// }
 
 // SECTION COOPERATION CONTACT
 
