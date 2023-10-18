@@ -39,22 +39,22 @@
     }
 }
 
-@media(min-width: 1200px) {
+@media(min-width: 1400px) {
     .header {
         &__img {
 
             // MAIN PAGE
 
             &--main {
-                background-image: url(../img/header-main-large.webp);
+                background-image: url(../img/header-main-hd.webp);
             }
 
             &--offer {
-                background-image: url(../img/header-oferta-large.webp);
+                background-image: url(../img/header-oferta-hd.webp);
             }
 
             &--cooperation {
-                background-image: url(../img/header-wspolpraca-large.webp);
+                background-image: url(../img/header-wspolpraca-hd.webp);
             }
         }
     }

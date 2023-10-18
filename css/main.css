@@ -521,53 +521,29 @@
 }
 .gallery__containerFullImage {
   position: relative;
-  padding: 0 1.2em;
-}
-.gallery__containerFullImage .gallery__title-box {
-  position: absolute;
-  left: calc(1.2em + 10px);
 }
 .gallery__containerFullImage img {
-  position: relative;
+  padding: 2px;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 .gallery__container {
   position: relative;
-  padding: 0 1.2em;
 }
-.gallery__container figure,
+.gallery__container picture,
 .gallery__container img {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.gallery__container img {
-  padding-top: 1.2em;
-}
 .gallery__figcaption {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  bottom: 0;
-  width: 100%;
-  height: 40px;
-  font-size: 1.4rem;
-  font-weight: 300;
-  color: #fff;
-  background-color: #202020;
-  transform: translateY(40px);
-  transition: transform 0.3s cubic-bezier(0, 0.76, 0.64, 1.01);
+  display: none;
 }
-a:hover .gallery__figcaption {
-  transform: translateY(0px);
-}
-.gallery__w100, .gallery__w66, .gallery__w33 {
+.gallery__w100, .gallery__w66, .gallery__w33, .gallery__w33half {
   position: relative;
+  overflow: hidden;
 }
 .gallery__title-box {
   position: absolute;
@@ -589,16 +565,12 @@ a:hover .gallery__figcaption {
 }
 
 @media (min-width: 768px) {
-  .gallery__containerFullImage {
-    padding: 2px;
-  }
   .gallery__container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding: 0;
   }
   .gallery__container a {
     margin: 0.15em;
@@ -606,13 +578,30 @@ a:hover .gallery__figcaption {
   .gallery__container img {
     width: 100%;
     height: 100%;
-    padding-top: 0;
     -o-object-fit: cover;
        object-fit: cover;
     transition: filter 0.3s;
   }
   .gallery__container img:hover {
     filter: brightness(70%);
+  }
+  .gallery__figcaption {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    height: 43px;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #fff;
+    background-color: #202020;
+    transform: translateY(43px);
+    transition: transform 0.3s cubic-bezier(0, 0.76, 0.64, 1.01);
+  }
+  a:hover .gallery__figcaption {
+    transform: translateY(0px);
   }
   .gallery__w100, .gallery__w33, .gallery__w66 {
     height: 45vw;
@@ -1058,15 +1047,15 @@ a:hover .gallery__figcaption {
     background-image: url(../img/header-wspolpraca.webp);
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .header__img--main {
-    background-image: url(../img/header-main-large.webp);
+    background-image: url(../img/header-main-hd.webp);
   }
   .header__img--offer {
-    background-image: url(../img/header-oferta-large.webp);
+    background-image: url(../img/header-oferta-hd.webp);
   }
   .header__img--cooperation {
-    background-image: url(../img/header-wspolpraca-large.webp);
+    background-image: url(../img/header-wspolpraca-hd.webp);
   }
 }
 .section-offerMain {
@@ -1139,6 +1128,7 @@ a:hover .gallery__figcaption {
   }
   .section-offerMain__img {
     width: 40%;
+    height: auto;
     padding: 1em;
   }
   .section-offerMain__img--left {
@@ -1170,6 +1160,7 @@ a:hover .gallery__figcaption {
 @media (min-width: 1200px) {
   .section-offerMain__img {
     width: 60%;
+    height: auto;
   }
   .section-offerMain__container {
     width: 40%;

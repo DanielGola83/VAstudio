@@ -685,18 +685,11 @@
 
     &__containerFullImage {
         position: relative;
-        padding: 0 1.2em;
-
-        .gallery__title-box {
-            position: absolute;
-            left: calc(1.2em + 10px);
-        }
 
         img {
-            position: relative;
+            padding: 2px;
             width: 100%;
             height: 100%;
-            overflow: hidden;
         }
     }
 }
@@ -705,45 +698,26 @@
 
     &__container {
         position: relative;
-        padding: 0 1.2em;
 
-        figure,
+        picture,
         img {
             position: relative;
             width: 100%;
             height: 100%;
             overflow: hidden;
         }
-
-        img {
-            padding-top: 1.2em;
-        }
     }
 
     &__figcaption {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        bottom: 0;
-        width: 100%;
-        height: 40px;
-        font-size: 1.4rem;
-        font-weight: 300;
-        color: $pure-white;
-        background-color: $complementary-Color;
-        transform: translateY(40px);
-        transition: transform .3s cubic-bezier(0, .76, .64, 1.01);
-    }
-
-    a:hover &__figcaption {
-        transform: translateY(0px);
+        display: none;
     }
 
     &__w100,
     &__w66,
-    &__w33 {
+    &__w33,
+    &__w33half {
         position: relative;
+        overflow: hidden;
     }
 
     &__title-box {
@@ -770,12 +744,6 @@
 }
 
 @media(min-width: 768px) {
-    .gallery {
-
-        &__containerFullImage {
-            padding: 2px;
-        }
-    }
 
     .gallery {
         &__container {
@@ -784,7 +752,6 @@
             justify-content: flex-start;
             align-items: flex-start;
             flex-wrap: wrap;
-            padding: 0;
 
             a {
                 margin: .15em;
@@ -793,7 +760,6 @@
             img {
                 width: 100%;
                 height: 100%;
-                padding-top: 0;
                 object-fit: cover;
                 transition: filter .3s;
             }
@@ -801,6 +767,26 @@
             img:hover {
                 filter: brightness(70%);
             }
+        }
+
+        &__figcaption {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 0;
+            width: 100%;
+            height: 43px;
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: $pure-white;
+            background-color: $complementary-Color;
+            transform: translateY(43px);
+            transition: transform .3s cubic-bezier(0, .76, .64, 1.01);
+        }
+
+        a:hover &__figcaption {
+            transform: translateY(0px);
         }
 
         &__w100,
@@ -844,23 +830,31 @@
     }
 }
 
+// // GALLERY KOPIA
+
+// .gallery {
+
+//     &__container2 {
+//         position: relative;
+
+//         img {
+//             padding: 2px;
+//             width: 100%;
+//         }
+//     }
+// }
+
 // .gallery {
 
 //     &__container {
 //         position: relative;
-//         padding: 0 1.2em;
 
-//         picture,
 //         figure,
 //         img {
 //             position: relative;
 //             width: 100%;
 //             height: 100%;
 //             overflow: hidden;
-//         }
-
-//         img {
-//             padding-top: 1.2em;
 //         }
 //     }
 
@@ -914,27 +908,14 @@
 // }
 
 // @media(min-width: 768px) {
-//     .gallery {
-
-//         &__containerFullImage {
-//             padding: 2px;
-//         }
-//     }
 
 //     .gallery {
-//         &__container2 {
-//             img {
-//                 padding: 2px;
-//             }
-//         }
-
 //         &__container {
 //             display: flex;
 //             flex-direction: row;
 //             justify-content: flex-start;
 //             align-items: flex-start;
 //             flex-wrap: wrap;
-//             padding: 0;
 
 //             a {
 //                 margin: .15em;
@@ -943,7 +924,6 @@
 //             img {
 //                 width: 100%;
 //                 height: 100%;
-//                 padding-top: 0;
 //                 object-fit: cover;
 //                 transition: filter .3s;
 //             }
