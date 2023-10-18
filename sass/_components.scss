@@ -685,10 +685,18 @@
 
     &__containerFullImage {
         position: relative;
+        padding: 0 1.2em;
 
         .gallery__title-box {
             position: absolute;
-            left: calc( 1.2em + 10px);
+            left: calc(1.2em + 10px);
+        }
+
+        img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
         }
     }
 }
@@ -762,14 +770,14 @@
 }
 
 @media(min-width: 768px) {
+    .gallery {
+
+        &__containerFullImage {
+            padding: 2px;
+        }
+    }
 
     .gallery {
-        &__container2 {
-            img {
-                padding: 2px;
-            }
-        }
-
         &__container {
             display: flex;
             flex-direction: row;
@@ -835,6 +843,156 @@
         }
     }
 }
+
+// .gallery {
+
+//     &__container {
+//         position: relative;
+//         padding: 0 1.2em;
+
+//         picture,
+//         figure,
+//         img {
+//             position: relative;
+//             width: 100%;
+//             height: 100%;
+//             overflow: hidden;
+//         }
+
+//         img {
+//             padding-top: 1.2em;
+//         }
+//     }
+
+//     &__figcaption {
+//         position: absolute;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         bottom: 0;
+//         width: 100%;
+//         height: 40px;
+//         font-size: 1.4rem;
+//         font-weight: 300;
+//         color: $pure-white;
+//         background-color: $complementary-Color;
+//         transform: translateY(40px);
+//         transition: transform .3s cubic-bezier(0, .76, .64, 1.01);
+//     }
+
+//     a:hover &__figcaption {
+//         transform: translateY(0px);
+//     }
+
+//     &__w100,
+//     &__w66,
+//     &__w33 {
+//         position: relative;
+//     }
+
+//     &__title-box {
+//         position: absolute;
+//         bottom: 20px;
+//         left: 10px;
+//         color: $pure-white;
+
+//         h3,
+//         p {
+//             font-weight: 100;
+//         }
+//     }
+
+//     &__title {
+//         font-size: 1.2rem;
+//         letter-spacing: .2em;
+//         text-transform: uppercase;
+//     }
+
+//     &__caption {
+//         font-size: 3rem;
+//     }
+// }
+
+// @media(min-width: 768px) {
+//     .gallery {
+
+//         &__containerFullImage {
+//             padding: 2px;
+//         }
+//     }
+
+//     .gallery {
+//         &__container2 {
+//             img {
+//                 padding: 2px;
+//             }
+//         }
+
+//         &__container {
+//             display: flex;
+//             flex-direction: row;
+//             justify-content: flex-start;
+//             align-items: flex-start;
+//             flex-wrap: wrap;
+//             padding: 0;
+
+//             a {
+//                 margin: .15em;
+//             }
+
+//             img {
+//                 width: 100%;
+//                 height: 100%;
+//                 padding-top: 0;
+//                 object-fit: cover;
+//                 transition: filter .3s;
+//             }
+
+//             img:hover {
+//                 filter: brightness(70%);
+//             }
+//         }
+
+//         &__w100,
+//         &__w33,
+//         &__w66 {
+//             height: 45vw;
+//             max-height: 600px;
+//         }
+
+//         &__w100 {
+//             position: relative;
+//             width: 100%;
+//         }
+
+//         &__w33 {
+//             width: calc((100% / 3) - .3em);
+//         }
+
+//         &__w33half {
+//             width: calc((100% / 3) - .3em);
+//             height: 22.5vw;
+//             max-height: 300px;
+//         }
+
+//         &__w66 {
+//             width: calc((100% / 3) * 2 - .3em);
+//         }
+
+//         &__title-box {
+//             bottom: 30px;
+//             left: 30px;
+//         }
+
+//         &__title {
+//             letter-spacing: .3em;
+//         }
+
+//         &__caption {
+//             font-size: 4.5rem;
+//         }
+//     }
+// }
 
 // SECTION COOPERATION CONTACT
 

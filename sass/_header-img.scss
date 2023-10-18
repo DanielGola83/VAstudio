@@ -38,3 +38,24 @@
         }
     }
 }
+
+@media(min-width: 1200px) {
+    .header {
+        &__img {
+
+            // MAIN PAGE
+
+            &--main {
+                background-image: url(../img/header-main-large.webp);
+            }
+
+            &--offer {
+                background-image: url(../img/header-oferta-large.webp);
+            }
+
+            &--cooperation {
+                background-image: url(../img/header-wspolpraca-large.webp);
+            }
+        }
+    }
+}

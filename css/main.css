@@ -521,10 +521,17 @@
 }
 .gallery__containerFullImage {
   position: relative;
+  padding: 0 1.2em;
 }
 .gallery__containerFullImage .gallery__title-box {
   position: absolute;
   left: calc(1.2em + 10px);
+}
+.gallery__containerFullImage img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .gallery__container {
@@ -582,7 +589,7 @@ a:hover .gallery__figcaption {
 }
 
 @media (min-width: 768px) {
-  .gallery__container2 img {
+  .gallery__containerFullImage {
     padding: 2px;
   }
   .gallery__container {
@@ -1051,6 +1058,17 @@ a:hover .gallery__figcaption {
     background-image: url(../img/header-wspolpraca.webp);
   }
 }
+@media (min-width: 1200px) {
+  .header__img--main {
+    background-image: url(../img/header-main-large.webp);
+  }
+  .header__img--offer {
+    background-image: url(../img/header-oferta-large.webp);
+  }
+  .header__img--cooperation {
+    background-image: url(../img/header-wspolpraca-large.webp);
+  }
+}
 .section-offerMain {
   margin: 2em 0;
 }
@@ -1062,6 +1080,7 @@ a:hover .gallery__figcaption {
 }
 .section-offerMain__img img {
   width: 100%;
+  height: auto;
 }
 .section-offerMain__container strong {
   font-weight: 700;
@@ -1816,8 +1835,8 @@ body {
   font-weight: 400;
   letter-spacing: 0.1em;
   text-decoration: none;
-  color: #8a6c44;
-  border: 1px solid #8a6c44;
+  color: #000;
+  border: 1px solid #000;
 }
 .section-offer__img {
   margin: 0 auto;
@@ -1907,6 +1926,7 @@ body {
   .section-offer__box a:hover {
     color: #fff;
     background-color: #8a6c44;
+    border: 1px solid #8a6c44;
   }
   .section-offer__img {
     width: 100%;

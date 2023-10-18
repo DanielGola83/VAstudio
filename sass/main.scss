@@ -501,8 +501,8 @@ body {
             font-weight: 400;
             letter-spacing: .1em;
             text-decoration: none;
-            color: $main-Color__dark;
-            border: 1px solid $main-Color__dark;
+            color: $pure-black;
+            border: 1px solid $pure-black;
         }
     }
 
@@ -619,6 +619,7 @@ body {
             a:hover {
                 color: $pure-white;
                 background-color: $main-Color__dark;
+                border: 1px solid $main-Color__dark;
             }
         }
 
