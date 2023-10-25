@@ -594,7 +594,7 @@
     transition: filter 0.3s;
   }
   .gallery__container img:hover {
-    filter: brightness(70%);
+    filter: brightness(90%);
   }
   .gallery__figcaption {
     position: absolute;
@@ -1124,7 +1124,7 @@
 .section-offerMain__features--title {
   letter-spacing: 0.1rem;
   margin-top: 2em;
-  color: #c39e6d;
+  color: #8b5e22;
   font-weight: 700;
 }
 

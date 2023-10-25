@@ -4,11 +4,33 @@ Order Allow,Deny
 Deny from all
 </FilesMatch>
 
+# 52 weeks
+<FilesMatch "\.(ico|webp|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+    Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
+
+# HTTP - HTTPS
 RewriteEngine on
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# HOTLINKS blocker
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?vastudio.pl [NC]
+RewriteRule \.(jpg|jpeg|webp|png|gif)$ – [NC,F,L]
+
 
 RewriteRule wizualizacje-architektoniczne index.html
 RewriteRule oferta-wizualizacje-3d oferta.html
 RewriteRule proces-wspolpracy wspolpraca.html
 RewriteRule skontaktuj-sie kontakt.html
+
+Redirect 301 /en/cat-architectural-visualizations https://www.vastudio.pl/
+Redirect 301 /architectural-visualizations https://www.vastudio.pl/
+Redirect 301 /pl/kontakt https://www.vastudio.pl/
+Redirect 301 /pl/cat-mieszkaniowa-1 https://www.vastudio.pl/
+Redirect 301 /pl/cat-swiatlo-wieczorne https://www.vastudio.pl/
+Redirect 301 /pl/cat-architektura https://www.vastudio.pl/
+Redirect 301 /pl/cat-wizualizacje-architektoniczne https://www.vastudio.pl/
+Redirect 301 /en https://www.vastudio.pl/
