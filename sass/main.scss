@@ -81,59 +81,80 @@ body {
     }
 
     .section-header {
+
         &__title {
-            font-weight: 500;
-            line-height: 1.3em;
-            font-size: 3.2rem;
+            margin: .3em 0;
+            font-size: 3.8rem;
         }
 
         &__pretitle {
             color: $main-Color;
         }
+
+        &__text {
+            display: none;
+        }
     }
 
-    .hl_thin::after {
-        background-color: $main-Color;
+    .button {
+        display: none;
     }
 
-    // @media(min-width: 375px) {
-    //     .section-header {
-    //         &__title {
-    //             font-size: 4.4rem;
-    //         }
-    //     }
-    // }
+    .hl_thin {
+        display: none;
+    }
 
-    // @media(min-width: 576px) {
-    //     .section-header {
-    //         &__title {
-    //             font-size: 5.2rem;
-    //             max-width: 700px;
-    //         }
-    //     }
-    // }
+    @media(min-width: 576px) {
+        .section-header {
+            &__title {
+                font-size: 5.2rem;
+                max-width: 700px;
+            }
+        }
+    }
 
-    // @media(min-width: 992px) {
-    //     .section-header {
-    //         &__title {
-    //             font-size: 5.8rem;
-    //             max-width: 800px;
-    //         }
-    //     }
-    // }
+    @media(min-width: 992px) {
+        .section-header {
+            &__title {
+                font-size: 5.8rem;
+                max-width: 800px;
+            }
+        }
+    }
 
-    // @media(min-width: 1200px) {
-    //     .section-header {
-    //         &__title {
-    //             font-size: 6rem;
-    //         }
-    //     }
-    // }
+    @media(min-width: 1200px) {
+        .section-header {
+            &__title {
+                font-size: 6rem;
+            }
+        }
+    }
 }
 
 @media(min-width: 992px) {
     .header {
         height: 85vh;
+    }
+}
+
+@media(min-height: 576px) {
+    .header {
+
+        .section-header {
+
+            &__text {
+                display: block;
+                padding-bottom: 0;
+            }
+        }
+
+        .button {
+            display: block;
+        }
+
+        .hl_thin {
+            display: block;
+        }
     }
 }
 
@@ -212,12 +233,12 @@ body {
 
     &__title {
         order: -2;
-        font-size: 2.6rem;
+        font-size: 2.4rem;
         font-weight: 300;
     }
 
     &__box p:first-of-type {
-        font-size: 2.4rem;
+        font-size: 2rem;
         font-weight: 300;
         font-style: italic;
         line-height: 1.5em;
@@ -241,6 +262,18 @@ body {
 
     &__box {
         width: 100%;
+    }
+}
+
+@media(min-width: 768px) {
+    .section-action {
+        &__title {
+            font-size: 2.6rem;
+        }
+
+        &__box p:first-of-type {
+            font-size: 2.4rem;
+        }
     }
 }
 
@@ -449,7 +482,6 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        height: 100vh;
 
         &__container {
             height: auto;
@@ -464,6 +496,12 @@ body {
         &__box {
             padding: 4em;
         }
+    }
+}
+
+@media(min-height: 1200px) {
+    .section-aboutMe {
+        height: 100vh;
     }
 }
 

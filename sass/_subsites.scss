@@ -466,8 +466,7 @@
 // SUBSITE CONTACT
 
 .section-contact {
-
-    padding: 6em 0;
+    padding: 8em 0 2em;
     background-color: $complementary-Color;
 
     .section-header {
@@ -475,6 +474,10 @@
         &__title,
         &__text {
             color: $light-white;
+        }
+
+        &__pretitle {
+            color: $main-Color;
         }
     }
 
@@ -509,32 +512,12 @@
     }
 }
 
-@media(min-width: 768px) {
-
+@media(min-height: 1200px) {
     .section-contact {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
 
-        padding: 15em 3em;
-        height: 100vh;
-    }
-}
-
-@media(min-width: 992px) {
-
-    .section-contact {
-        padding: 20em 3em;
-        height: 100vh;
-    }
-}
-
-@media(min-width: 1200px) {
-
-    .section-contact {
-        justify-content: flex-end;
-
-        padding: 0;
         height: 60vh;
     }
 }
