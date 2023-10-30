@@ -4,7 +4,7 @@ Order Allow,Deny
 Deny from all
 </FilesMatch>
 
-# 52 weeks
+# 52 weeks cache
 <FilesMatch "\.(ico|webp|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
     Header set Cache-Control "max-age=31536000, public"
 </FilesMatch>
@@ -14,23 +14,30 @@ RewriteEngine on
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# HOTLINKS blocker
+# Przekierowanie z www na bez www
 RewriteEngine on
-RewriteCond %{HTTP_REFERER} !^$
-RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?vastudio.pl [NC]
-RewriteRule \.(jpg|jpeg|webp|png|gif)$ – [NC,F,L]
+RewriteCond %{HTTP_HOST} ^www.
+RewriteCond %{HTTPS}s ^on(s)|off
+RewriteCond http%1://%{HTTP_HOST} ^(https?://)(www.)?(.+)$
+RewriteRule ^ %1%3%{REQUEST_URI} [R=301,L]
 
-
+# friendly addresses
 RewriteRule wizualizacje-architektoniczne index.html
 RewriteRule oferta-wizualizacje-3d oferta.html
-RewriteRule proces-wspolpracy wspolpraca.html
+RewriteRule opis-wspolpracy wspolpraca.html
 RewriteRule skontaktuj-sie kontakt.html
+RewriteRule wizualizacje-wnetrz realizacje-wnetrza.html
 
-Redirect 301 /en/cat-architectural-visualizations https://www.vastudio.pl/
-Redirect 301 /architectural-visualizations https://www.vastudio.pl/
-Redirect 301 /pl/kontakt https://www.vastudio.pl/
-Redirect 301 /pl/cat-mieszkaniowa-1 https://www.vastudio.pl/
-Redirect 301 /pl/cat-swiatlo-wieczorne https://www.vastudio.pl/
-Redirect 301 /pl/cat-architektura https://www.vastudio.pl/
-Redirect 301 /pl/cat-wizualizacje-architektoniczne https://www.vastudio.pl/
-Redirect 301 /en https://www.vastudio.pl/
+# 301 redirect
+Redirect 301 /en/cat-architectural-visualizations https://vastudio.pl/
+Redirect 301 /architectural-visualizations https://vastudio.pl/
+Redirect 301 /pl/kontakt https://vastudio.pl/
+Redirect 301 /pl/cat-mieszkaniowa-1 https://vastudio.pl/
+Redirect 301 /pl/cat-swiatlo-wieczorne https://vastudio.pl/
+Redirect 301 /pl/cat-architektura https://vastudio.pl/
+Redirect 301 /pl/cat-wizualizacje-architektoniczne https://vastudio.pl/
+Redirect 301 /en https://vastudio.pl/
+Redirect 301 /proces-wspolpracy https://vastudio.pl/opis-wspolpracy
+
+# strona error 404
+ErrorDocument 404 /404.html

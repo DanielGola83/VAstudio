@@ -15,6 +15,10 @@
         &--cooperation {
             background-image: url(../img/header-wspolpraca-mobile.webp);
         }
+
+        &--RlsInteriorviz {
+            background-image: url(../img/header-wspolpraca-mobile.webp);
+        }
     }
 }
 
@@ -33,6 +37,10 @@
             }
 
             &--cooperation {
+                background-image: url(../img/header-wspolpraca.webp);
+            }
+
+            &--RlsInteriorviz {
                 background-image: url(../img/header-wspolpraca.webp);
             }
         }
@@ -54,6 +62,10 @@
             }
 
             &--cooperation {
+                background-image: url(../img/header-wspolpraca-hd.webp);
+            }
+            
+            &--RlsInteriorviz {
                 background-image: url(../img/header-wspolpraca-hd.webp);
             }
         }

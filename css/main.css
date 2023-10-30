@@ -12,8 +12,10 @@
 
 .nav__logoBtn {
   order: -1;
+  position: relative;
 }
 .nav__logo-box {
+  position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -37,6 +39,18 @@
   }
   to {
     opacity: 1;
+  }
+}
+@media (min-width: 992px) {
+  .nav__logo-box::before {
+    top: 110px;
+    left: 5px;
+    font-size: 2.8rem;
+  }
+  .nav__logo-box::after {
+    top: 145px;
+    left: 5px;
+    font-size: 1.25rem;
   }
 }
 .section-margin {
@@ -532,6 +546,7 @@
 .gallery__container {
   position: relative;
   margin: 0 1.2em;
+  pointer-events: none;
 }
 .gallery__container img {
   position: relative;
@@ -581,6 +596,7 @@
     align-items: flex-start;
     flex-wrap: wrap;
     margin: 0;
+    pointer-events: auto;
   }
   .gallery__container a {
     margin: 0.15em;
@@ -861,7 +877,7 @@
 .CTA__closeBtn {
   position: absolute;
   top: 0;
-  right: 3em;
+  right: 1em;
   margin: 0.8em;
   padding: 2em;
   width: 60px;
@@ -992,7 +1008,7 @@
     right: 0;
     width: 45%;
     height: 570px;
-    background-image: url(../img/cta02.webp);
+    background-image: url(../img/call-to-action-02.webp);
     background-size: cover;
     background-position: center;
   }
@@ -1017,10 +1033,10 @@
     background-size: cover;
   }
   .CTA__content-box-img-One {
-    background-image: url(../img/cta03.webp);
+    background-image: url(../img/call-to-action-03.webp);
   }
   .CTA__content-box-img-Two {
-    background-image: url(../img/cta01.webp);
+    background-image: url(../img/call-to-action-01.webp);
     align-self: flex-end;
   }
   .CTA__content-box-items {
@@ -1047,6 +1063,9 @@
 .header__img--cooperation {
   background-image: url(../img/header-wspolpraca-mobile.webp);
 }
+.header__img--RlsInteriorviz {
+  background-image: url(../img/header-wspolpraca-mobile.webp);
+}
 
 @media (min-width: 720px) {
   .header__img--main {
@@ -1058,6 +1077,9 @@
   .header__img--cooperation {
     background-image: url(../img/header-wspolpraca.webp);
   }
+  .header__img--RlsInteriorviz {
+    background-image: url(../img/header-wspolpraca.webp);
+  }
 }
 @media (min-width: 1400px) {
   .header__img--main {
@@ -1067,6 +1089,9 @@
     background-image: url(../img/header-oferta-hd.webp);
   }
   .header__img--cooperation {
+    background-image: url(../img/header-wspolpraca-hd.webp);
+  }
+  .header__img--RlsInteriorviz {
     background-image: url(../img/header-wspolpraca-hd.webp);
   }
 }
