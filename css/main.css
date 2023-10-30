@@ -125,9 +125,6 @@
   .section-header__pretitle {
     letter-spacing: 0.1em;
   }
-  .section-header__title {
-    font-size: 4rem;
-  }
 }
 @media (min-width: 992px) {
   .section-header__container {
@@ -610,7 +607,7 @@
     transition: filter 0.3s;
   }
   .gallery__container img:hover {
-    filter: brightness(90%);
+    filter: brightness(80%);
   }
   .gallery__figcaption {
     position: absolute;
@@ -1557,36 +1554,13 @@ body {
 .header .section-header__title {
   font-weight: 500;
   line-height: 1.3em;
-  font-size: 3.6rem;
+  font-size: 3.2rem;
 }
 .header .section-header__pretitle {
   color: #c39e6d;
 }
 .header .hl_thin::after {
   background-color: #c39e6d;
-}
-@media (min-width: 375px) {
-  .header .section-header__title {
-    font-size: 4.4rem;
-    font-weight: 300;
-  }
-}
-@media (min-width: 576px) {
-  .header .section-header__title {
-    font-size: 5.2rem;
-    max-width: 700px;
-  }
-}
-@media (min-width: 992px) {
-  .header .section-header__title {
-    font-size: 5.8rem;
-    max-width: 800px;
-  }
-}
-@media (min-width: 1200px) {
-  .header .section-header__title {
-    font-size: 6rem;
-  }
 }
 
 @media (min-width: 992px) {
@@ -1701,10 +1675,13 @@ body {
   text-transform: uppercase;
 }
 .section-easyWork__subtitle {
-  margin: 1em 0;
+  height: 110px;
+  margin: 1em 0 2em;
+  padding-bottom: 1.5em;
   font-size: 1.8rem;
   font-weight: 300;
   font-style: italic;
+  border-bottom: 1px solid #c39e6d;
 }
 .section-easyWork__description {
   font-size: 1.6rem;
@@ -2067,6 +2044,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding: 2em 0;
   }
   .section-reviews__box {
     width: 33.3333333333%;
@@ -2088,6 +2066,9 @@ body {
   }
 }
 @media (min-width: 992px) {
+  .section-reviews__container {
+    padding: 4em 0 6em;
+  }
   .section-reviews__description {
     height: 150px;
   }

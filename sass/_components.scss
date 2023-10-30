@@ -51,41 +51,6 @@
     }
 }
 
-// @media(min-width: 768px) {
-//     .nav {
-//         &__logo-box::before {
-
-//             content: 'studio';
-//             position: absolute;
-//             top: 40px;
-//             left: 160px;
-
-//             filter: invert(1);
-//             font-size: 3.6rem;
-//             font-weight: 100;
-//             font-style: italic;
-//             color: $main-Color;
-//             letter-spacing: .2rem;
-//         }
-
-//         &__logo-box::after {
-
-//             content: 'wizualizacji';
-//             position: absolute;
-//             top: 80px;
-//             left: 160px;
-
-//             filter: invert(1);
-//             font-size: 1.7rem;
-//             font-weight: 100;
-//             font-style: italic;
-//             color: $pure-white;
-
-//             letter-spacing: .2rem;
-//         }
-//     }
-// }
-
 @media(min-width: 992px) {
     .nav {
         &__logo-box::before {
@@ -191,9 +156,9 @@
             letter-spacing: .1em;
         }
 
-        &__title {
-            font-size: 4rem;
-        }
+        // &__title {
+        //     font-size: 4rem;
+        // }
     }
 }
 
@@ -838,7 +803,7 @@
             }
 
             img:hover {
-                filter: brightness(90%);
+                filter: brightness(80%);
             }
         }
 
