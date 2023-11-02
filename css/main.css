@@ -73,8 +73,8 @@
   text-align: center;
 }
 .section-header__title {
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-size: 3rem;
+  font-weight: 500;
   line-height: 1.3em;
 }
 .section-header__pretitle {
@@ -1524,12 +1524,12 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: -1;
 }
 .header .section-header__title {
   margin: 0.3em 0;
-  font-size: 3.8rem;
+  font-size: 3.6rem;
 }
 .header .section-header__pretitle {
   color: #c39e6d;
@@ -1547,6 +1547,11 @@ body {
   .header .section-header__title {
     font-size: 5.2rem;
     max-width: 700px;
+  }
+}
+@media (min-width: 768px) {
+  .header .section-header__title {
+    font-weight: 300;
   }
 }
 @media (min-width: 992px) {
@@ -1829,11 +1834,6 @@ body {
   }
   .section-aboutMe img, .section-aboutMe__box {
     padding: 4em;
-  }
-}
-@media (min-height: 1200px) {
-  .section-aboutMe {
-    height: 100vh;
   }
 }
 .section-offer__box {
