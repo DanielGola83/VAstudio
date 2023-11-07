@@ -263,7 +263,7 @@
 
 .button {
     &__header {
-        margin: 2em auto 0;
+        margin: 4em auto 0;
         color: $main-Color;
         border: 3px solid $main-Color;
         background-color: transparent;
@@ -1115,6 +1115,7 @@
         height: 95vh;
         margin: 0 3em;
         background-color: $pure-white;
+        border-radius: 5px;
         z-index: 100;
         transform: translateY(-20px);
         opacity: 0;
