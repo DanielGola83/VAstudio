@@ -1043,7 +1043,7 @@
   background-image: url(../img/header-main-mobile.webp);
 }
 .header__img--offer {
-  background-image: url(../img/header-oferta-mobile.webp);
+  background-image: url(../img/header-oferta-mobile.jpg);
 }
 .header__img--cooperation {
   background-image: url(../img/header-wspolpraca-mobile.webp);
@@ -1057,7 +1057,7 @@
     background-image: url(../img/header-main.webp);
   }
   .header__img--offer {
-    background-image: url(../img/header-oferta.webp);
+    background-image: url(../img/header-oferta.jpg);
   }
   .header__img--cooperation {
     background-image: url(../img/header-wspolpraca.webp);
@@ -1071,7 +1071,7 @@
     background-image: url(../img/header-main-hd.webp);
   }
   .header__img--offer {
-    background-image: url(../img/header-oferta-hd.webp);
+    background-image: url(../img/header-oferta-hd.jpg);
   }
   .header__img--cooperation {
     background-image: url(../img/header-wspolpraca-hd.webp);
