@@ -18,9 +18,9 @@ RewriteRule ^ %1%3%{REQUEST_URI} [R=301,L]
 
 # friendly addresses
 RewriteRule wizualizacje-architektoniczne index.html
-RewriteRule oferta-wizualizacje-3d oferta.html
+RewriteRule oferta oferta.html
 RewriteRule opis-wspolpracy wspolpraca.html
-RewriteRule skontaktuj-sie kontakt.html
+RewriteRule kontakt kontakt.html
 RewriteRule wizualizacje-wnetrz realizacje-wnetrza.html
 
 # 301 redirect
@@ -32,9 +32,11 @@ Redirect 301 /pl/cat-swiatlo-wieczorne https://vastudio.pl/
 Redirect 301 /pl/cat-architektura https://vastudio.pl/
 Redirect 301 /pl/cat-wizualizacje-architektoniczne https://vastudio.pl/
 Redirect 301 /en https://vastudio.pl/
+
 Redirect 301 /proces-wspolpracy https://vastudio.pl/opis-wspolpracy
 Redirect 301 /jak-powstaja-wizualizacje https://vastudio.pl/opis-wspolpracy
-Redirect 301 /kontakt https://vastudio.pl/skontaktuj-sie
+
+
 Redirect 301 /wizualizacje-architektoniczne https://vastudio.pl/
 
 # strona error 404
