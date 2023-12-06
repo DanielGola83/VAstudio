@@ -2,56 +2,51 @@
 
 .section-offerMain {
 
-    margin: 2em 0;
+    margin: 0 0 4em;
+    padding: 0 0 1.5em;
+
+    &__line {
+        margin: 2em 0;
+        width: 70px;
+        height: 1px;
+        background-color: $main-Color;
+    }
 
     &__BgColor {
         background-color: rgb(245, 245, 245);
     }
 
     &__img {
-        padding: 2em;
 
         img {
+            padding: 2em 2em 0;
             width: 100%;
-            height: auto;
+            height: 100%;
         }
     }
 
-    &__container strong {
-        font-weight: 700;
-    }
-
     &__container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+
         padding: 2em;
-        text-align: left;
 
         h3,
+        h4,
         p {
             line-height: 1.6em;
         }
 
         h3 {
+            font-weight: 500;
             font-size: 2.6rem;
         }
 
         p {
             font-size: 1.8rem;
-            font-style: italic;
         }
     }
 
-    &__line {
-        order: -1;
-        margin: 2em auto;
-        width: 70px;
-        height: 1px;
-        background-color: $main-Color;
-    }
-
     &__features {
+
         margin: 6em 0 2em;
 
         h4 {
@@ -59,8 +54,7 @@
         }
 
         p {
-            font-style: normal;
-            font-size: 1.6rem;
+            font-style: italic;
         }
 
         &--title {
@@ -70,23 +64,30 @@
             font-weight: 700;
         }
     }
-}
 
-.button-offerMain {
-    margin: 2em 0 0;
+    &__buttons {
+        // padding: 0 2em;
+
+        .button-offerMain {
+            margin: 1em 0;
+        }
+    }
 }
 
 @media(min-width: 768px) {
+
     .section-offerMain {
 
         display: flex;
-        margin: 3em 0;
-        padding: 2em;
+
+
+        margin: 0 0 6em;
+        padding: 0;
+
+
 
         &__img {
             width: 40%;
-            height: auto;
-            padding: 1em;
 
             &--left {
                 order: 0;
@@ -95,49 +96,123 @@
             &--right {
                 order: 2;
             }
+
+            img {
+                width: 100%;
+                height: auto;
+                padding: 3em 2em 0;
+            }
         }
 
         &__container {
-            position: relative;
-            align-items: flex-start;
             width: 60%;
-            padding: 1em;
-            text-align: left;
+            padding: 3em;
+
+            h3 {
+                font-weight: 300;
+                // font-size: 2.6rem;
+            }
+
+            p {
+                font-style: italic;
+            }
         }
 
-        &__line {
-            margin: 2em 0;
+        &__box {
+            margin-bottom: 5em;
+        }
+
+        &__features {
+            margin: 0;
+            margin-bottom: 5em;
+        }
+
+        &__buttons {
+
+            .button-offerMain {
+                margin: 2em 0 0;
+            }
         }
     }
 }
 
-@media(min-width: 992px) {
-    .section-offerMain {
-
-        &__img {
-            padding: 2em;
-        }
-
-        &__container {
-            justify-content: space-between;
-            padding: 2em;
-        }
-    }
-}
 
 @media(min-width: 1200px) {
+
     .section-offerMain {
 
+        padding: 2em;
+
+
+
+
         &__img {
-            width: 60%;
-            height: auto;
+            width: 58%;
+
+            img {
+                padding: 2em;
+            }
         }
 
         &__container {
-            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            width: 42%;
+            padding: 2em;
+        }
+
+        &__box {
+            // margin: 0;
+        }
+
+        &__features {
+            margin: 0;
+
+            p {
+                font-size: 1.6rem;
+            }
+        }
+
+        &__buttons {
+            display: flex;
+            justify-content: space-between;
         }
     }
 }
+
+
+
+
+
+// @media(min-width: 992px) {
+//     .section-offerMain {
+
+//         &__img {
+//             padding: 2em;
+//         }
+
+//         &__container {
+//             justify-content: space-between;
+//             padding: 2em;
+//         }
+//     }
+// }
+
+// @media(min-width: 1200px) {
+//     .section-offerMain {
+
+//         &__img {
+//             width: 58%;
+//             height: auto;
+//         }
+
+//         &__container {
+//             width: 42%;
+//         }
+//     }
+// }
 
 // SUBSITE REALIZATIONS
 
