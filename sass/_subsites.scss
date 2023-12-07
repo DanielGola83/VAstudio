@@ -3,12 +3,11 @@
 .section-offerMain {
 
     margin: 0 0 4em;
-    padding: 0 0 1.5em;
 
     &__line {
-        margin: 2em 0;
         width: 70px;
         height: 1px;
+        margin: 2em 0;
         background-color: $main-Color;
     }
 
@@ -19,9 +18,9 @@
     &__img {
 
         img {
-            padding: 2em 2em 0;
             width: 100%;
             height: 100%;
+            padding: 2em 2em 0;
         }
     }
 
@@ -45,9 +44,13 @@
         }
     }
 
+    &__box {
+        margin-bottom: 5em;
+    }
+
     &__features {
 
-        margin: 6em 0 2em;
+        margin-bottom: 5em;
 
         h4 {
             font-size: 1.8rem;
@@ -58,18 +61,17 @@
         }
 
         &--title {
-            letter-spacing: .1rem;
             margin-top: 2em;
             color: $main-Color__darkTwo;
+            letter-spacing: .1rem;
             font-weight: 700;
         }
     }
 
     &__buttons {
-        // padding: 0 2em;
 
         .button-offerMain {
-            margin: 1em 0;
+            margin: 2em 0 0;
         }
     }
 }
@@ -79,12 +81,8 @@
     .section-offerMain {
 
         display: flex;
-
-
         margin: 0 0 6em;
-        padding: 0;
-
-
+        padding: 1.5em;
 
         &__img {
             width: 40%;
@@ -100,17 +98,19 @@
             img {
                 width: 100%;
                 height: auto;
-                padding: 3em 2em 0;
+                padding: 1.5em;
             }
         }
 
         &__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             width: 60%;
-            padding: 3em;
+            padding: 1.5em;
 
             h3 {
                 font-weight: 300;
-                // font-size: 2.6rem;
             }
 
             p {
@@ -130,21 +130,36 @@
         &__buttons {
 
             .button-offerMain {
-                margin: 2em 0 0;
+                margin: 2em 0 auto 0;
             }
         }
     }
 }
 
 
+@media(min-width: 1024px) {
+    .section-offerMain {
+
+        &__buttons {
+            display: flex;
+            justify-content: space-between;
+
+            .button-offerMain {
+                letter-spacing: .25rem;
+            }
+        }
+
+        &__buttons--right {
+            justify-content: flex-end;
+        }
+    }
+}
+
 @media(min-width: 1200px) {
 
     .section-offerMain {
 
         padding: 2em;
-
-
-
 
         &__img {
             width: 58%;
@@ -155,64 +170,97 @@
         }
 
         &__container {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
             width: 42%;
             padding: 2em;
         }
 
         &__box {
-            // margin: 0;
+            margin-bottom: 3em;
         }
 
         &__features {
+
             margin: 0;
 
             p {
                 font-size: 1.6rem;
             }
         }
+    }
 
-        &__buttons {
+    // SUBSITE OFFER - w100
+
+    .section-offerMain {
+
+        &--w100 {
+            position: relative;
+            padding: 0;
+        }
+
+        &__img--w100 {
+            width: 100%;
+
+            img {
+                padding: 0;
+                background-color: $pure-black;
+            }
+        }
+
+        &__img--w100::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, rgba(0, 0, 0, .8) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        &__container--w100 {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 4em;
+            z-index: 10;
+        }
+
+        &__box--w100 {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            margin: 0;
+            color: $light-white;
+
+            h3 {
+                font-size: 4.2rem;
+
+                strong {
+                    font-weight: 500;
+                }
+            }
+
+            p {
+                width: 500px;
+                margin-bottom: 2em;
+                font-size: 2rem;
+                line-height: 2.1em;
+                order: -2;
+            }
+        }
+
+        &__line--w100 {
+            order: -1;
+        }
+
+        &__buttons--w100 {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 42%;
+            padding: 2em 4em 4em 2em;
         }
     }
 }
 
-
-
-
-
-// @media(min-width: 992px) {
-//     .section-offerMain {
-
-//         &__img {
-//             padding: 2em;
-//         }
-
-//         &__container {
-//             justify-content: space-between;
-//             padding: 2em;
-//         }
-//     }
-// }
-
-// @media(min-width: 1200px) {
-//     .section-offerMain {
-
-//         &__img {
-//             width: 58%;
-//             height: auto;
-//         }
-
-//         &__container {
-//             width: 42%;
-//         }
-//     }
-// }
 
 // SUBSITE REALIZATIONS
 
